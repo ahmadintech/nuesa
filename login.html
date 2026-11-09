@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Student Portal Login - NUESA UNIMAID Chapter</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="NUESA UNIMAID Student Login, Engineering Portal, Dues Payment, SIWES Clearance" name="keywords">
+    <meta content="Secure student portal login interface for engineering students at the University of Maiduguri." name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts & Material Symbols -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Rubik:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body class="bg-light" style="background-color: #f4f6f9 !important;">
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-white px-0 border-bottom border-light shadow-sm">
+        <div class="row g-0 d-none d-lg-flex">
+            <div class="col-lg-7 ps-5 text-start">
+                <div class="h-100 d-inline-flex align-items-center text-muted small">
+                    <span class="me-4"><i class="fa fa-university me-2 text-primary"></i>Faculty of Engineering, University of Maiduguri</span>
+                    <span class="me-4"><i class="fa fa-envelope me-2 text-primary"></i>portal@nuesaunimaid.org.ng</span>
+                </div>
+            </div>
+            <div class="col-lg-5 text-end">
+                <div class="h-100 topbar-right d-inline-flex align-items-center text-white py-2 px-5 bg-primary">
+                    <span class="fs-6 fw-bold me-2"><i class="fa fa-shield-alt me-2"></i>Secure Portal v2.5</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-0 pe-3 pe-lg-5 shadow-sm">
+        <a href="index.html" class="navbar-brand ps-4 me-0">
+            <h2 class="text-white m-0 d-flex align-items-center">
+                <img src="img/logos/NUESA logo.jpeg" alt="NUESA UNIMAID Logo" class="me-2" style="height: 46px; width: 46px; border-radius: 50%; object-fit: cover; border: 2px solid #ffffff;">NUESA UNIMAID
+            </h2>
+        </a>
+        <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="about.html" class="nav-item nav-link">About Us</a>
+                <div class="nav-item dropdown">
+                    <a href="resources.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Resources</a>
+                    <div class="dropdown-menu bg-light m-0 shadow">
+                        <a href="resources.html" class="dropdown-item"><i class="fa fa-book text-primary me-2"></i>Course Vault & Past Questions</a>
+                        <a href="resources.html#alumni" class="dropdown-item"><i class="fa fa-user-graduate text-primary me-2"></i>Alumni Network</a>
+                        <a href="resources.html#archives" class="dropdown-item"><i class="fa fa-archive text-primary me-2"></i>Archives & Governance</a>
+                    </div>
+                </div>
+                <a href="gallery.html" class="nav-item nav-link">Gallery</a>
+                <a href="news.html" class="nav-item nav-link">News & Events</a>
+                <a href="team.html" class="nav-item nav-link">Staffs</a>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+            </div>
+            <a href="login.html" class="btn btn-secondary rounded-pill px-4 ms-3 d-none d-lg-inline-flex align-items-center shadow-sm fw-semibold active"><i class="fa fa-lock me-2"></i>Login</a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+    <!-- STUDENT LOGIN / PORTAL SECTION -->
+    <div class="container-fluid py-5 my-3">
+        <div class="container">
+            <div class="row justify-content-center align-items-center g-5">
+                
+                <!-- Left Feature Info Box (Hidden on Mobile) -->
+                <div class="col-lg-6 d-none d-lg-block wow fadeIn" data-wow-delay="0.1s">
+                    <div class="p-4 p-lg-5 bg-white rounded-5 shadow-sm border border-2 border-light position-relative overflow-hidden" style="border-radius: 30px !important;">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="bg-primary-subtle text-primary p-3 rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 64px; height: 64px; background: rgba(0, 135, 81, 0.1);">
+                                <span class="material-symbols-outlined text-primary" style="font-size: 36px;">verified_user</span>
+                            </div>
+                            <div>
+                                <h2 class="text-dark mb-0 fw-bold" style="letter-spacing: -0.5px;">NUESA Student Portal</h2>
+                                <span class="badge bg-primary-subtle text-primary px-3 py-1 rounded-pill fw-semibold mt-1">Faculty of Engineering • UNIMAID</span>
+                            </div>
+                        </div>
+                        <p class="fs-5 mb-4 text-muted">Access your personalized engineering academic dashboard, session clearance, and e-learning resources.</p>
+                        
+                        <div class="row g-3">
+                            <div class="col-sm-6">
+                                <div class="p-3 bg-light rounded-4 border-start border-4 border-primary shadow-sm">
+                                    <h6 class="text-dark fw-bold mb-1 d-flex align-items-center"><span class="material-symbols-outlined text-primary me-2" style="font-size: 20px;">receipt_long</span>Dues Payment</h6>
+                                    <small class="text-muted">Generate Remita / Pay NUESA annual dues online.</small>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="p-3 bg-light rounded-4 border-start border-4 border-warning shadow-sm">
+                                    <h6 class="text-dark fw-bold mb-1 d-flex align-items-center"><span class="material-symbols-outlined text-warning me-2" style="font-size: 20px;">folder_zip</span>Course Vault</h6>
+                                    <small class="text-muted">Download verified past questions & lecture slides.</small>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="p-3 bg-light rounded-4 border-start border-4 border-primary shadow-sm">
+                                    <h6 class="text-dark fw-bold mb-1 d-flex align-items-center"><span class="material-symbols-outlined text-primary me-2" style="font-size: 20px;">how_to_vote</span>NUESA Election</h6>
+                                    <small class="text-muted">Accredit and cast votes in chapter executive elections.</small>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="p-3 bg-light rounded-4 border-start border-4 border-warning shadow-sm">
+                                    <h6 class="text-dark fw-bold mb-1 d-flex align-items-center"><span class="material-symbols-outlined text-warning me-2" style="font-size: 20px;">badge</span>NUESA ID Card</h6>
+                                    <small class="text-muted">Generate digital student e-ID card & event access passes.</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Login Form Card (Shaped Card with Custom Curves & Floating Emblem) -->
+                <div class="col-lg-5 col-md-8 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="card border-0 bg-white shadow-lg overflow-hidden" style="border-radius: 32px !important; border: 2px solid rgba(0, 135, 81, 0.12) !important;">
+                        <!-- Top Accent Bar -->
+                        <div style="height: 6px; background: linear-gradient(90deg, #008751 0%, #ffc107 50%, #008751 100%);"></div>
+
+                        <div class="card-body p-4 p-sm-5">
+                            <!-- Card Header with Shaped NUESA Logo -->
+                            <div class="text-center mb-4">
+                                <div class="position-relative d-inline-block mb-3">
+                                    <div class="p-2 rounded-circle bg-white shadow-sm" style="border: 3px solid #008751;">
+                                        <img src="img/logos/NUESA logo.jpeg" alt="NUESA UNIMAID Logo" class="rounded-circle" style="width: 78px; height: 78px; object-fit: cover;">
+                                    </div>
+                                </div>
+                                <h3 class="text-dark fw-bold mb-1" style="letter-spacing: -0.5px;">Student Portal Login</h3>
+                                <p class="text-muted small mb-0">Enter your Email or Student ID & Password</p>
+                            </div>
+
+                            <form action="dashboard/index.html">
+                                <!-- Email or Student ID -->
+                                <div class="mb-3">
+                                    <label for="matricNumber" class="form-label fw-semibold text-dark small d-flex align-items-center mb-2">
+                                        <span class="material-symbols-outlined text-primary me-2" style="font-size: 20px;">badge</span>
+                                        Email or Student ID
+                                    </label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light border-end-0 text-muted px-3 py-3" style="border-top-left-radius: 16px; border-bottom-left-radius: 16px;">
+                                            <span class="material-symbols-outlined" style="font-size: 20px;">person</span>
+                                        </span>
+                                        <input type="text" class="form-control bg-light border-start-0 py-3 fs-6" id="matricNumber" placeholder="student@unimaid.edu.ng or 20/05/01/000" style="border-top-right-radius: 16px; border-bottom-right-radius: 16px;" required>
+                                    </div>
+                                </div>
+
+                                <!-- Password -->
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <label for="studentPassword" class="form-label fw-semibold text-dark small d-flex align-items-center mb-0">
+                                            <span class="material-symbols-outlined text-primary me-2" style="font-size: 20px;">lock</span>
+                                            Portal Password
+                                        </label>
+                                        <a href="#" class="small text-secondary fw-bold text-decoration-none d-inline-flex align-items-center" data-bs-toggle="modal" data-bs-target="#forgotPasswordModal">
+                                            Forgot Password?
+                                        </a>
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light border-end-0 text-muted px-3 py-3" style="border-top-left-radius: 16px; border-bottom-left-radius: 16px;">
+                                            <span class="material-symbols-outlined" style="font-size: 20px;">key</span>
+                                        </span>
+                                        <input type="password" class="form-control bg-light border-start-0 py-3 fs-6" id="studentPassword" placeholder="••••••••••••" style="border-top-right-radius: 16px; border-bottom-right-radius: 16px;" required>
+                                    </div>
+                                </div>
+
+                                <!-- Remember Me Checkbox -->
+                                <div class="mb-4 form-check">
+                                    <input type="checkbox" class="form-check-input" id="rememberMe">
+                                    <label class="form-check-label small text-muted ms-1" for="rememberMe">Keep me logged in on this browser</label>
+                                </div>
+
+                                <!-- Submit Button (Shaped Pill Button) -->
+                                <button type="submit" class="btn btn-primary w-100 py-3 fw-bold shadow-sm d-flex align-items-center justify-content-center fs-6" style="border-radius: 50px; background: linear-gradient(135deg, #008751 0%, #006038 100%); border: none;">
+                                    <span class="material-symbols-outlined me-2" style="font-size: 22px;">login</span>
+                                    Access Student Portal
+                                </button>
+
+                                <div class="position-relative my-4 text-center">
+                                    <hr class="text-muted opacity-25">
+                                    <span class="position-absolute top-50 start-50 translate-middle bg-white px-3 small text-muted">OR</span>
+                                </div>
+
+                                <!-- Quick Register Link -->
+                                <div class="text-center">
+                                    <p class="small text-muted mb-0">First time using the NUESA Portal? 
+                                        <a href="#" class="fw-bold text-primary text-decoration-none d-inline-flex align-items-center ms-1" data-bs-toggle="modal" data-bs-target="#registerModal">
+                                            First Time Registration 
+                                            <span class="material-symbols-outlined ms-1" style="font-size: 18px;">arrow_forward</span>
+                                        </a>
+                                    </p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Login Section End -->
+
+
+    <!-- FORGOT PASSWORD MODAL -->
+    <div class="modal fade" id="forgotPasswordModal" tabindex="-1" aria-labelledby="forgotPasswordModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 bg-white shadow-lg overflow-hidden" style="border-radius: 28px !important; border: 2px solid rgba(0, 135, 81, 0.12) !important;">
+                <!-- Top Accent Bar -->
+                <div style="height: 6px; background: linear-gradient(90deg, #008751 0%, #ffc107 50%, #008751 100%);"></div>
+
+                <div class="modal-header bg-white border-bottom border-light px-4 pt-4 pb-3">
+                    <div class="d-flex align-items-center">
+                        <div class="p-2 rounded-circle me-3" style="background: rgba(0, 135, 81, 0.1);">
+                            <span class="material-symbols-outlined text-primary" style="font-size: 28px;">lock_reset</span>
+                        </div>
+                        <div>
+                            <h5 class="modal-title text-dark fw-bold mb-0" id="forgotPasswordModalLabel" style="letter-spacing: -0.5px;">Reset Portal Password</h5>
+                            <small class="text-muted">Recover your student portal account access</small>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4 bg-white">
+                    <p class="small text-muted mb-4">Enter your registered student email address or Matric Number. A password reset link will be dispatched to your inbox.</p>
+                    <div class="mb-3">
+                        <label for="resetEmail" class="form-label fw-semibold text-dark small d-flex align-items-center mb-2">
+                            <span class="material-symbols-outlined text-primary me-2" style="font-size: 20px;">mail</span>
+                            Student Email / Matric No.
+                        </label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-light border-end-0 text-muted px-3 py-3" style="border-top-left-radius: 16px; border-bottom-left-radius: 16px;">
+                                <span class="material-symbols-outlined" style="font-size: 20px;">badge</span>
+                            </span>
+                            <input type="text" class="form-control bg-light border-start-0 py-3 fs-6" id="resetEmail" placeholder="student@unimaid.edu.ng or 20/05/01/000" style="border-top-right-radius: 16px; border-bottom-right-radius: 16px;">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer bg-white border-top border-light px-4 py-3">
+                    <button type="button" class="btn btn-light px-4 py-3 fw-bold rounded-pill shadow-sm" data-bs-dismiss="modal" style="border: 1px solid #e0e0e0;">Cancel</button>
+                    <button type="button" class="btn btn-primary px-4 py-3 fw-bold shadow-sm d-flex align-items-center justify-content-center fs-6" style="border-radius: 50px; background: linear-gradient(135deg, #008751 0%, #006038 100%); border: none;" onclick="alert('Password reset link has been sent to your student email!'); $('#forgotPasswordModal').modal('hide');">
+                        <span class="material-symbols-outlined me-2" style="font-size: 20px;">send</span>
+                        Send Reset Link
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- FIRST TIME REGISTRATION MODAL -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 bg-white shadow-lg overflow-hidden" style="border-radius: 28px !important; border: 2px solid rgba(0, 135, 81, 0.12) !important;">
+                <!-- Top Accent Bar -->
+                <div style="height: 6px; background: linear-gradient(90deg, #008751 0%, #ffc107 50%, #008751 100%);"></div>
+
+                <div class="modal-header bg-white border-bottom border-light px-4 pt-4 pb-3">
+                    <div class="d-flex align-items-center">
+                        <div class="p-2 rounded-circle me-3" style="background: rgba(0, 135, 81, 0.1);">
+                            <span class="material-symbols-outlined text-primary" style="font-size: 28px;">person_add</span>
+                        </div>
+                        <div>
+                            <h4 class="modal-title text-dark fw-bold mb-0" id="registerModalLabel" style="letter-spacing: -0.5px;">NUESA First Time Portal Registration</h4>
+                            <small class="text-muted">Create your official student account for portal access</small>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                
+                <div class="modal-body p-4 p-md-5 bg-white">
+                    <form onsubmit="event.preventDefault(); alert('Account activation request submitted! Check your email to verify.'); $('#registerModal').modal('hide');">
+                        <div class="row g-4">
+                            <!-- Full Name -->
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold text-dark small d-flex align-items-center mb-2">
+                                    <span class="material-symbols-outlined text-primary me-2" style="font-size: 20px;">person</span>
+                                    Full Name
+                                </label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-light border-end-0 text-muted px-3 py-3" style="border-top-left-radius: 16px; border-bottom-left-radius: 16px;">
+                                        <span class="material-symbols-outlined" style="font-size: 20px;">badge</span>
+                                    </span>
+                                    <input type="text" class="form-control bg-light border-start-0 py-3 fs-6" style="border-top-right-radius: 16px; border-bottom-right-radius: 16px;" placeholder="e.g. Mustapha Umar" required>
+                                </div>
+                            </div>
+
+                            <!-- Matric / Student ID -->
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold text-dark small d-flex align-items-center mb-2">
+                                    <span class="material-symbols-outlined text-primary me-2" style="font-size: 20px;">id_card</span>
+                                    Matric / Student ID
+                                </label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-light border-end-0 text-muted px-3 py-3" style="border-top-left-radius: 16px; border-bottom-left-radius: 16px;">
+                                        <span class="material-symbols-outlined" style="font-size: 20px;">tag</span>
+                                    </span>
+                                    <input type="text" class="form-control bg-light border-start-0 py-3 fs-6" style="border-top-right-radius: 16px; border-bottom-right-radius: 16px;" placeholder="20/05/01/000" required>
+                                </div>
+                            </div>
+
+                            <!-- Engineering Department -->
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold text-dark small d-flex align-items-center mb-2">
+                                    <span class="material-symbols-outlined text-primary me-2" style="font-size: 20px;">account_balance</span>
+                                    Engineering Department
+                                </label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-light border-end-0 text-muted px-3 py-3" style="border-top-left-radius: 16px; border-bottom-left-radius: 16px;">
+                                        <span class="material-symbols-outlined" style="font-size: 20px;">school</span>
+                                    </span>
+                                    <select class="form-select bg-light border-start-0 py-3 fs-6" id="regDeptSelect" style="border-top-right-radius: 16px; border-bottom-right-radius: 16px;" required>
+                                        <option value="">Select Department</option>
+                                        <option>Agricultural and Environmental Resources Engineering</option>
+                                        <option>Chemical Engineering</option>
+                                        <option>Civil and Water Resources Engineering</option>
+                                        <option>Computer Engineering</option>
+                                        <option>Electrical and Electronics Engineering</option>
+                                        <option>Mechanical Engineering</option>
+                                        <option>Food Science and Technology</option>
+                                        <option>Petroleum and Gas Engineering</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Academic Level -->
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold text-dark small d-flex align-items-center mb-2">
+                                    <span class="material-symbols-outlined text-primary me-2" style="font-size: 20px;">grade</span>
+                                    Academic Level
+                                </label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-light border-end-0 text-muted px-3 py-3" style="border-top-left-radius: 16px; border-bottom-left-radius: 16px;">
+                                        <span class="material-symbols-outlined" style="font-size: 20px;">layers</span>
+                                    </span>
+                                    <select class="form-select bg-light border-start-0 py-3 fs-6" id="regLevelSelect" style="border-top-right-radius: 16px; border-bottom-right-radius: 16px;" onchange="toggleRegGradYear(this)" required>
+                                        <option value="">Select Level</option>
+                                        <option value="100L">100L</option>
+                                        <option value="200L">200L</option>
+                                        <option value="300L">300L</option>
+                                        <option value="400L">400L</option>
+                                        <option value="500L">500L</option>
+                                        <option value="Graduate">Graduate</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Year of Graduation (Conditional for Graduate) -->
+                            <div class="col-md-6 d-none" id="regGradYearContainer">
+                                <label class="form-label fw-semibold text-dark small d-flex align-items-center mb-2">
+                                    <span class="material-symbols-outlined text-primary me-2" style="font-size: 20px;">workspace_premium</span>
+                                    Year of Graduation
+                                </label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-light border-end-0 text-muted px-3 py-3" style="border-top-left-radius: 16px; border-bottom-left-radius: 16px;">
+                                        <span class="material-symbols-outlined" style="font-size: 20px;">calendar_today</span>
+                                    </span>
+                                    <select class="form-select bg-light border-start-0 py-3 fs-6" style="border-top-right-radius: 16px; border-bottom-right-radius: 16px;">
+                                        <option value="">Select Graduation Year</option>
+                                        <option value="2025">2025</option>
+                                        <option value="2024">2024</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2019">2019</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Create Password -->
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold text-dark small d-flex align-items-center mb-2">
+                                    <span class="material-symbols-outlined text-primary me-2" style="font-size: 20px;">lock</span>
+                                    Create Password
+                                </label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-light border-end-0 text-muted px-3 py-3" style="border-top-left-radius: 16px; border-bottom-left-radius: 16px;">
+                                        <span class="material-symbols-outlined" style="font-size: 20px;">key</span>
+                                    </span>
+                                    <input type="password" class="form-control bg-light border-start-0 py-3 fs-6" style="border-top-right-radius: 16px; border-bottom-right-radius: 16px;" placeholder="••••••••••••" required>
+                                </div>
+                            </div>
+
+                            <!-- Confirm Password -->
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold text-dark small d-flex align-items-center mb-2">
+                                    <span class="material-symbols-outlined text-primary me-2" style="font-size: 20px;">lock_reset</span>
+                                    Confirm Password
+                                </label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-light border-end-0 text-muted px-3 py-3" style="border-top-left-radius: 16px; border-bottom-left-radius: 16px;">
+                                        <span class="material-symbols-outlined" style="font-size: 20px;">published_with_changes</span>
+                                    </span>
+                                    <input type="password" class="form-control bg-light border-start-0 py-3 fs-6" style="border-top-right-radius: 16px; border-bottom-right-radius: 16px;" placeholder="••••••••••••" required>
+                                </div>
+                            </div>
+
+                            <!-- Action Buttons -->
+                            <div class="col-12 mt-4 pt-2">
+                                <div class="d-flex flex-column flex-sm-row gap-3">
+                                    <button type="button" class="btn btn-light px-4 py-3 fw-bold rounded-pill shadow-sm" data-bs-dismiss="modal" style="border: 1px solid #e0e0e0;">Cancel</button>
+                                    <button type="submit" class="btn btn-primary flex-grow-1 py-3 fw-bold shadow-sm d-flex align-items-center justify-content-center fs-6" style="border-radius: 50px; background: linear-gradient(135deg, #008751 0%, #006038 100%); border: none;">
+                                        <span class="material-symbols-outlined me-2" style="font-size: 22px;">how_to_reg</span>
+                                        Create Portal Account
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark footer py-5 border-top border-secondary">
+        <div class="container text-center">
+            <p class="mb-0 text-white-50">Copyright &copy; NUESA UNIMAID Chapter - University of Maiduguri. All Rights Reserved.</p>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script>
+        function toggleRegGradYear(selectElem) {
+            if ($(selectElem).val() === 'Graduate') {
+                $('#regGradYearContainer').removeClass('d-none');
+            } else {
+                $('#regGradYearContainer').addClass('d-none');
+            }
+        }
+
+        $(document).ready(function() {
+            const customDepts = JSON.parse(localStorage.getItem('nuesa_custom_departments') || '[]');
+            if (customDepts.length > 0) {
+                $('#regDeptSelect').empty().append(new Option('Select Department', ''));
+                customDepts.forEach(d => $('#regDeptSelect').append(new Option(d, d)));
+            }
+
+            const customLevels = JSON.parse(localStorage.getItem('nuesa_custom_levels') || '[]');
+            if (customLevels.length > 0) {
+                $('#regLevelSelect').empty().append(new Option('Select Level', ''));
+                customLevels.forEach(l => $('#regLevelSelect').append(new Option(l, l)));
+            }
+        });
+    </script>
+</body>
+
+</html>

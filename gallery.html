@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Gallery & Student Album - NUESA UNIMAID Chapter</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="NUESA UNIMAID Student Gallery, Departmental Sets, Class of 2024, Class of 2025, History Archives" name="keywords">
+    <meta content="Explore the NUESA UNIMAID student photo album, departmental sets, class archives, and interactive student detail profiles." name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Rubik:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Custom Gallery Mobile Grid & Image Styles -->
+    <style>
+        .gallery-img-box {
+            height: 220px;
+        }
+        @media (max-width: 575.98px) {
+            /* Enforce strict 2-cards-per-row grid on mobile screens (e.g. 400px width) */
+            #galleryContainer {
+                display: flex !important;
+                flex-wrap: wrap !important;
+                margin-left: -6px !important;
+                margin-right: -6px !important;
+            }
+            #galleryContainer > .gallery-item-col {
+                width: 50% !important;
+                max-width: 50% !important;
+                flex: 0 0 50% !important;
+                padding-left: 6px !important;
+                padding-right: 6px !important;
+            }
+            .gallery-img-box {
+                height: 185px !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark px-0">
+        <div class="row g-0 d-none d-lg-flex">
+            <div class="col-lg-7 ps-5 text-start">
+                <div class="h-100 d-inline-flex align-items-center text-white small">
+                    <span class="me-4"><i class="fa fa-university me-2 text-secondary"></i>Faculty of Engineering, University of Maiduguri</span>
+                    <span class="me-4"><i class="fa fa-envelope me-2 text-secondary"></i>info@nuesaunimaid.org.ng</span>
+                </div>
+            </div>
+            <div class="col-lg-5 text-end">
+                <div class="h-100 topbar-right d-inline-flex align-items-center text-white py-2 px-5">
+                    <span class="fs-6 fw-bold me-2"><i class="fa fa-phone-alt me-2"></i>NUESA Secretariat:</span>
+                    <span class="fs-6 fw-bold">+234 800 NUESA UNIMAID</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-0 pe-3 pe-lg-5 shadow-sm">
+        <a href="index.html" class="navbar-brand ps-4 me-0">
+            <h2 class="text-white m-0 d-flex align-items-center">
+                <img src="img/logos/NUESA logo.jpeg" alt="NUESA UNIMAID Logo" class="me-2" style="height: 46px; width: 46px; border-radius: 50%; object-fit: cover; border: 2px solid #ffffff;">NUESA UNIMAID
+            </h2>
+        </a>
+        <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="about.html" class="nav-item nav-link">About Us</a>
+                <div class="nav-item dropdown">
+                    <a href="resources.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Resources</a>
+                    <div class="dropdown-menu bg-light m-0 shadow">
+                        <a href="resources.html" class="dropdown-item"><i class="fa fa-book text-primary me-2"></i>Course Vault & Past Questions</a>
+                        <a href="resources.html#alumni" class="dropdown-item"><i class="fa fa-user-graduate text-primary me-2"></i>Alumni Network</a>
+                        <a href="resources.html#archives" class="dropdown-item"><i class="fa fa-archive text-primary me-2"></i>Archives & Governance</a>
+                    </div>
+                </div>
+                <a href="gallery.html" class="nav-item nav-link active">Gallery</a>
+                <a href="news.html" class="nav-item nav-link">News & Events</a>
+                <a href="team.html" class="nav-item nav-link">Staffs</a>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+            </div>
+            <a href="login.html" class="btn btn-secondary rounded-pill px-4 ms-3 d-none d-lg-inline-flex align-items-center shadow-sm fw-semibold"><i class="fa fa-lock me-2"></i>Login</a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <h1 class="display-3 text-white animated slideInRight">Student Album & Archives</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb animated slideInRight mb-0">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active text-white" aria-current="page">Gallery</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- 1. DYNAMIC CATEGORY FILTERS SECTION -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 650px;">
+                <p class="fw-medium text-uppercase text-primary mb-2">Student Photo Archive</p>
+                <h1 class="display-5 mb-3">Departmental & Session Album</h1>
+                <p class="text-muted">Filter photos by Department or Academic Set. Click any photo to view full student details.</p>
+            </div>
+
+            <!-- Dynamic Category Filter Buttons -->
+            <div class="d-flex flex-wrap gap-2 justify-content-center mb-5 wow fadeInUp" data-wow-delay="0.2s">
+                <button class="btn btn-primary gallery-filter-btn active rounded-pill px-3 py-2 shadow-sm" data-filter="all"><i class="fa fa-th-large me-1"></i>All Photos</button>
+                <button class="btn btn-outline-primary gallery-filter-btn rounded-pill px-3 py-2 shadow-sm" data-filter="civil">Civil Eng.</button>
+                <button class="btn btn-outline-primary gallery-filter-btn rounded-pill px-3 py-2 shadow-sm" data-filter="electrical">Electrical Eng.</button>
+                <button class="btn btn-outline-primary gallery-filter-btn rounded-pill px-3 py-2 shadow-sm" data-filter="mechanical">Mechanical Eng.</button>
+                <button class="btn btn-outline-primary gallery-filter-btn rounded-pill px-3 py-2 shadow-sm" data-filter="computer">Computer Eng.</button>
+                <button class="btn btn-outline-secondary gallery-filter-btn rounded-pill px-3 py-2 shadow-sm" data-filter="class2025">Class of 2025 (500L)</button>
+                <button class="btn btn-outline-secondary gallery-filter-btn rounded-pill px-3 py-2 shadow-sm" data-filter="class2024">Class of 2024 (Alumni)</button>
+                <button class="btn btn-outline-secondary gallery-filter-btn rounded-pill px-3 py-2 shadow-sm" data-filter="archives">Archives</button>
+            </div>
+
+            <!-- 2. CASCADE / 5-IN-LINE RESPONSIVE PHOTO GRID -->
+            <div class="row g-3 gallery-grid-5" id="galleryContainer">
+
+                <!-- Photo 1 -->
+                <div class="col-6 col-sm-6 col-md-4 col-lg-3 gallery-item-col civil class2025 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="gallery-tile gallery-item-card border-0 rounded-4 shadow-sm cursor-pointer position-relative overflow-hidden bg-white" style="border-radius: 20px !important;"
+                         data-bs-toggle="modal" data-bs-target="#studentDetailModal"
+                         data-id="NUESA/UMD/2025/0101"
+                         data-name="Comr. Ismail Isah Yusuf"
+                         data-dept="Civil & Water Resources Engineering"
+                         data-class="Class of 2025 (500L)"
+                         data-role="NUESA President (Executive Council)"
+                         data-phone="+234 803 456 7890"
+                         data-email="ismail.yusuf@eng.unimaid.edu.ng"
+                         data-state="Borno State"
+                         data-joined="October 2020"
+                         data-verified="verified"
+                         data-img="img/project-1.jpg">
+                        <div class="position-relative overflow-hidden gallery-img-box">
+                            <img class="img-fluid w-100 h-100 gallery-tile-img" src="img/project-1.jpg" alt="Mustapha Umar" style="object-fit: cover;">
+                            <span class="badge bg-primary position-absolute top-0 start-0 m-2 px-3 py-2 shadow-sm fw-bold rounded-pill" style="font-size: 0.75rem; letter-spacing: 0.5px;">CWE</span>
+                            <span class="badge bg-success position-absolute top-0 end-0 m-2 px-2 py-1 shadow-sm fw-bold rounded-pill" style="font-size: 0.65rem;" title="Verified"><i class="fa fa-check-circle me-1"></i>Verified</span>
+                        </div>
+                        <div class="p-3 bg-white text-center">
+                            <h6 class="mb-1 text-dark small fw-bold">Comr. Ismail Isah Yusuf</h6>
+                            <span class="badge bg-success-subtle text-success border border-success extra-small rounded-pill"><i class="fa fa-check-circle me-1"></i>Verified</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo 2 -->
+                <div class="col-6 col-sm-6 col-md-4 col-lg-3 gallery-item-col electrical class2025 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="gallery-tile gallery-item-card border-0 rounded-4 shadow-sm cursor-pointer position-relative overflow-hidden bg-white" style="border-radius: 20px !important;"
+                         data-bs-toggle="modal" data-bs-target="#studentDetailModal"
+                         data-id="NUESA/UMD/2025/0102"
+                         data-name="Comr. Fatima Ibrahim"
+                         data-dept="Electrical & Electronics Engineering"
+                         data-class="Class of 2025 (500L)"
+                         data-role="NUESA Vice President"
+                         data-phone="+234 812 345 6789"
+                         data-email="fatima.ibrahim@eng.unimaid.edu.ng"
+                         data-state="Yobe State"
+                         data-joined="November 2020"
+                         data-verified="verified"
+                         data-img="img/project-4.jpg">
+                        <div class="position-relative overflow-hidden gallery-img-box">
+                            <img class="img-fluid w-100 h-100 gallery-tile-img" src="img/project-4.jpg" alt="Fatima Ibrahim" style="object-fit: cover;">
+                            <span class="badge bg-primary position-absolute top-0 start-0 m-2 px-3 py-2 shadow-sm fw-bold rounded-pill" style="font-size: 0.75rem; letter-spacing: 0.5px;">EEE</span>
+                            <span class="badge bg-success position-absolute top-0 end-0 m-2 px-2 py-1 shadow-sm fw-bold rounded-pill" style="font-size: 0.65rem;" title="Verified"><i class="fa fa-check-circle me-1"></i>Verified</span>
+                        </div>
+                        <div class="p-3 bg-white text-center">
+                            <h6 class="mb-1 text-dark small fw-bold">Comr. Fatima Ibrahim</h6>
+                            <span class="badge bg-success-subtle text-success border border-success extra-small rounded-pill"><i class="fa fa-check-circle me-1"></i>Verified</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo 3 -->
+                <div class="col-6 col-sm-6 col-md-4 col-lg-3 gallery-item-col mechanical class2025 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="gallery-tile gallery-item-card border-0 rounded-4 shadow-sm cursor-pointer position-relative overflow-hidden bg-white" style="border-radius: 20px !important;"
+                         data-bs-toggle="modal" data-bs-target="#studentDetailModal"
+                         data-id="NUESA/UMD/2025/0103"
+                         data-name="Comr. Abubakar Ali"
+                         data-dept="Mechanical Engineering"
+                         data-class="Class of 2025 (500L)"
+                         data-role="NUESA Secretary General"
+                         data-phone="+234 806 789 0123"
+                         data-email="abubakar.ali@eng.unimaid.edu.ng"
+                         data-state="Adamawa State"
+                         data-joined="January 2021"
+                         data-verified="to_be_verified"
+                         data-img="img/project-2.jpg">
+                        <div class="position-relative overflow-hidden gallery-img-box">
+                            <img class="img-fluid w-100 h-100 gallery-tile-img" src="img/project-2.jpg" alt="Abubakar Ali" style="object-fit: cover;">
+                            <span class="badge bg-primary position-absolute top-0 start-0 m-2 px-3 py-2 shadow-sm fw-bold rounded-pill" style="font-size: 0.75rem; letter-spacing: 0.5px;">MEE</span>
+                            <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-2 px-2 py-1 shadow-sm fw-bold rounded-pill" style="font-size: 0.65rem;" title="To be verified"><i class="fa fa-clock me-1"></i>Pending</span>
+                        </div>
+                        <div class="p-3 bg-white text-center">
+                            <h6 class="mb-1 text-dark small fw-bold">Comr. Abubakar Ali</h6>
+                            <span class="badge bg-warning-subtle text-warning border border-warning extra-small rounded-pill"><i class="fa fa-clock me-1"></i>To be verified</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo 4 -->
+                <div class="col-6 col-sm-6 col-md-4 col-lg-3 gallery-item-col computer class2024 archives wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="gallery-tile gallery-item-card border-0 rounded-4 shadow-sm cursor-pointer position-relative overflow-hidden bg-white" style="border-radius: 20px !important;"
+                         data-bs-toggle="modal" data-bs-target="#studentDetailModal"
+                         data-id="NUESA/UMD/2024/0084"
+                         data-name="Engr. Babagana Sheriff"
+                         data-dept="Computer Engineering"
+                         data-class="Class of 2024 (Alumni)"
+                         data-role="Former NUESA Tech Lead"
+                         data-phone="+234 814 567 8901"
+                         data-email="babagana.sheriff@alumni.unimaid.edu.ng"
+                         data-state="Borno State"
+                         data-joined="September 2019"
+                         data-verified="verified"
+                         data-img="img/project-5.jpg">
+                        <div class="position-relative overflow-hidden gallery-img-box">
+                            <img class="img-fluid w-100 h-100 gallery-tile-img" src="img/project-5.jpg" alt="Babagana Sheriff" style="object-fit: cover;">
+                            <span class="badge bg-primary position-absolute top-0 start-0 m-2 px-3 py-2 shadow-sm fw-bold rounded-pill" style="font-size: 0.75rem; letter-spacing: 0.5px;">CPE</span>
+                            <span class="badge bg-success position-absolute top-0 end-0 m-2 px-2 py-1 shadow-sm fw-bold rounded-pill" style="font-size: 0.65rem;" title="Verified"><i class="fa fa-check-circle me-1"></i>Verified</span>
+                        </div>
+                        <div class="p-3 bg-white text-center">
+                            <h6 class="mb-1 text-dark small fw-bold">Engr. Babagana Sheriff</h6>
+                            <span class="badge bg-success-subtle text-success border border-success extra-small rounded-pill"><i class="fa fa-check-circle me-1"></i>Verified</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo 5 -->
+                <div class="col-6 col-sm-6 col-md-4 col-lg-3 gallery-item-col civil class2024 archives wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="gallery-tile gallery-item-card border-0 rounded-4 shadow-sm cursor-pointer position-relative overflow-hidden bg-white" style="border-radius: 20px !important;"
+                         data-bs-toggle="modal" data-bs-target="#studentDetailModal"
+                         data-id="NUESA/UMD/2024/0085"
+                         data-name="Engr. Amina Usman"
+                         data-dept="Civil & Water Resources Engineering"
+                         data-class="Class of 2024 (Alumni)"
+                         data-role="Best Graduating Student (Civil)"
+                         data-phone="+234 802 345 6789"
+                         data-email="amina.usman@alumni.unimaid.edu.ng"
+                         data-state="Taraba State"
+                         data-joined="October 2019"
+                         data-verified="to_be_verified"
+                         data-img="img/project-3.jpg">
+                        <div class="position-relative overflow-hidden gallery-img-box">
+                            <img class="img-fluid w-100 h-100 gallery-tile-img" src="img/project-3.jpg" alt="Amina Usman" style="object-fit: cover;">
+                            <span class="badge bg-primary position-absolute top-0 start-0 m-2 px-3 py-2 shadow-sm fw-bold rounded-pill" style="font-size: 0.75rem; letter-spacing: 0.5px;">CWE</span>
+                            <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-2 px-2 py-1 shadow-sm fw-bold rounded-pill" style="font-size: 0.65rem;" title="To be verified"><i class="fa fa-clock me-1"></i>Pending</span>
+                        </div>
+                        <div class="p-3 bg-white text-center">
+                            <h6 class="mb-1 text-dark small fw-bold">Engr. Amina Usman</h6>
+                            <span class="badge bg-warning-subtle text-warning border border-warning extra-small rounded-pill"><i class="fa fa-clock me-1"></i>To be verified</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo 6 -->
+                <div class="col-6 col-sm-6 col-md-4 col-lg-3 gallery-item-col electrical class2025 archives wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="gallery-tile gallery-item-card border-0 rounded-4 shadow-sm cursor-pointer position-relative overflow-hidden bg-white" style="border-radius: 20px !important;"
+                         data-bs-toggle="modal" data-bs-target="#studentDetailModal"
+                         data-id="NUESA/UMD/2025/0106"
+                         data-name="Emmanuel Chidiebere"
+                         data-dept="Electrical & Electronics Engineering"
+                         data-class="Class of 2025 (500L)"
+                         data-role="IEEE UNIMAID Student Chair"
+                         data-phone="+234 813 678 9012"
+                         data-email="emmanuel.c@eng.unimaid.edu.ng"
+                         data-state="Enugu State"
+                         data-joined="February 2021"
+                         data-verified="verified"
+                         data-img="img/project-6.jpg">
+                        <div class="position-relative overflow-hidden gallery-img-box">
+                            <img class="img-fluid w-100 h-100 gallery-tile-img" src="img/project-6.jpg" alt="Emmanuel Chidiebere" style="object-fit: cover;">
+                            <span class="badge bg-primary position-absolute top-0 start-0 m-2 px-3 py-2 shadow-sm fw-bold rounded-pill" style="font-size: 0.75rem; letter-spacing: 0.5px;">EEE</span>
+                            <span class="badge bg-success position-absolute top-0 end-0 m-2 px-2 py-1 shadow-sm fw-bold rounded-pill" style="font-size: 0.65rem;" title="Verified"><i class="fa fa-check-circle me-1"></i>Verified</span>
+                        </div>
+                        <div class="p-3 bg-white text-center">
+                            <h6 class="mb-1 text-dark small fw-bold">Emmanuel Chidiebere</h6>
+                            <span class="badge bg-success-subtle text-success border border-success extra-small rounded-pill"><i class="fa fa-check-circle me-1"></i>Verified</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo 7 -->
+                <div class="col-6 col-sm-6 col-md-4 col-lg-3 gallery-item-col computer class2025 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="gallery-tile gallery-item-card border-0 rounded-4 shadow-sm cursor-pointer position-relative overflow-hidden bg-white" style="border-radius: 20px !important;"
+                         data-bs-toggle="modal" data-bs-target="#studentDetailModal"
+                         data-id="NUESA/UMD/2025/0107"
+                         data-name="Comr. Zainab Hassan"
+                         data-dept="Computer Engineering"
+                         data-class="Class of 2025 (500L)"
+                         data-role="NUESA Financial Secretary"
+                         data-phone="+234 805 432 1098"
+                         data-email="zainab.hassan@eng.unimaid.edu.ng"
+                         data-state="Bauchi State"
+                         data-joined="October 2020"
+                         data-verified="to_be_verified"
+                         data-img="img/team-2.jpg">
+                        <div class="position-relative overflow-hidden gallery-img-box">
+                            <img class="img-fluid w-100 h-100 gallery-tile-img" src="img/team-2.jpg" alt="Zainab Hassan" style="object-fit: cover;">
+                            <span class="badge bg-primary position-absolute top-0 start-0 m-2 px-3 py-2 shadow-sm fw-bold rounded-pill" style="font-size: 0.75rem; letter-spacing: 0.5px;">CPE</span>
+                            <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-2 px-2 py-1 shadow-sm fw-bold rounded-pill" style="font-size: 0.65rem;" title="To be verified"><i class="fa fa-clock me-1"></i>Pending</span>
+                        </div>
+                        <div class="p-3 bg-white text-center">
+                            <h6 class="mb-1 text-dark small fw-bold">Comr. Zainab Hassan</h6>
+                            <span class="badge bg-warning-subtle text-warning border border-warning extra-small rounded-pill"><i class="fa fa-clock me-1"></i>To be verified</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo 8 -->
+                <div class="col-6 col-sm-6 col-md-4 col-lg-3 gallery-item-col agricultural class2024 archives wow fadeInUp" data-wow-delay="0.8s">
+                    <div class="gallery-tile gallery-item-card border-0 rounded-4 shadow-sm cursor-pointer position-relative overflow-hidden bg-white" style="border-radius: 20px !important;"
+                         data-bs-toggle="modal" data-bs-target="#studentDetailModal"
+                         data-id="NUESA/UMD/2024/0088"
+                         data-name="Engr. Usman Kyari"
+                         data-dept="Agricultural & Env. Engineering"
+                         data-class="Class of 2024 (Alumni)"
+                         data-role="PRO Executive"
+                         data-phone="+234 816 789 0123"
+                         data-email="usman.kyari@alumni.unimaid.edu.ng"
+                         data-state="Borno State"
+                         data-joined="November 2019"
+                         data-verified="verified"
+                         data-img="img/team-1.jpg">
+                        <div class="position-relative overflow-hidden gallery-img-box">
+                            <img class="img-fluid w-100 h-100 gallery-tile-img" src="img/team-1.jpg" alt="Usman Kyari" style="object-fit: cover;">
+                            <span class="badge bg-primary position-absolute top-0 start-0 m-2 px-3 py-2 shadow-sm fw-bold rounded-pill" style="font-size: 0.75rem; letter-spacing: 0.5px;">AEE</span>
+                            <span class="badge bg-success position-absolute top-0 end-0 m-2 px-2 py-1 shadow-sm fw-bold rounded-pill" style="font-size: 0.65rem;" title="Verified"><i class="fa fa-check-circle me-1"></i>Verified</span>
+                        </div>
+                        <div class="p-3 bg-white text-center">
+                            <h6 class="mb-1 text-dark small fw-bold">Engr. Usman Kyari</h6>
+                            <span class="badge bg-success-subtle text-success border border-success extra-small rounded-pill"><i class="fa fa-check-circle me-1"></i>Verified</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo 9 -->
+                <div class="col-6 col-sm-6 col-md-4 col-lg-3 gallery-item-col chemical class2025 wow fadeInUp" data-wow-delay="0.9s">
+                    <div class="gallery-tile gallery-item-card border-0 rounded-4 shadow-sm cursor-pointer position-relative overflow-hidden bg-white" style="border-radius: 20px !important;"
+                         data-bs-toggle="modal" data-bs-target="#studentDetailModal"
+                         data-id="NUESA/UMD/2025/0109"
+                         data-name="Comr. Idris Mohammed"
+                         data-dept="Chemical Engineering"
+                         data-class="Class of 2025 (500L)"
+                         data-role="Social Director"
+                         data-phone="+234 807 654 3210"
+                         data-email="idris.mohammed@eng.unimaid.edu.ng"
+                         data-state="Gombe State"
+                         data-joined="March 2021"
+                         data-verified="to_be_verified"
+                         data-img="img/team-3.jpg">
+                        <div class="position-relative overflow-hidden gallery-img-box">
+                            <img class="img-fluid w-100 h-100 gallery-tile-img" src="img/team-3.jpg" alt="Idris Mohammed" style="object-fit: cover;">
+                            <span class="badge bg-primary position-absolute top-0 start-0 m-2 px-3 py-2 shadow-sm fw-bold rounded-pill" style="font-size: 0.75rem; letter-spacing: 0.5px;">CHE</span>
+                            <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-2 px-2 py-1 shadow-sm fw-bold rounded-pill" style="font-size: 0.65rem;" title="To be verified"><i class="fa fa-clock me-1"></i>Pending</span>
+                        </div>
+                        <div class="p-3 bg-white text-center">
+                            <h6 class="mb-1 text-dark small fw-bold">Comr. Idris Mohammed</h6>
+                            <span class="badge bg-warning-subtle text-warning border border-warning extra-small rounded-pill"><i class="fa fa-clock me-1"></i>To be verified</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo 10 -->
+                <div class="col-6 col-sm-6 col-md-4 col-lg-3 gallery-item-col food class2024 archives wow fadeInUp" data-wow-delay="1.0s">
+                    <div class="gallery-tile gallery-item-card border-0 rounded-4 shadow-sm cursor-pointer position-relative overflow-hidden bg-white" style="border-radius: 20px !important;"
+                         data-bs-toggle="modal" data-bs-target="#studentDetailModal"
+                         data-id="NUESA/UMD/2024/0090"
+                         data-name="Engr. Maryam Bello"
+                         data-dept="Food Science & Technology"
+                         data-class="Class of 2024 (Alumni)"
+                         data-role="Sports Director"
+                         data-phone="+234 818 901 2345"
+                         data-email="maryam.bello@alumni.unimaid.edu.ng"
+                         data-state="Kano State"
+                         data-joined="December 2019"
+                         data-verified="verified"
+                         data-img="img/project-2.jpg">
+                        <div class="position-relative overflow-hidden gallery-img-box">
+                            <img class="img-fluid w-100 h-100 gallery-tile-img" src="img/project-2.jpg" alt="Maryam Bello" style="object-fit: cover;">
+                            <span class="badge bg-primary position-absolute top-0 start-0 m-2 px-3 py-2 shadow-sm fw-bold rounded-pill" style="font-size: 0.75rem; letter-spacing: 0.5px;">FST</span>
+                            <span class="badge bg-success position-absolute top-0 end-0 m-2 px-2 py-1 shadow-sm fw-bold rounded-pill" style="font-size: 0.65rem;" title="Verified"><i class="fa fa-check-circle me-1"></i>Verified</span>
+                        </div>
+                        <div class="p-3 bg-white text-center">
+                            <h6 class="mb-1 text-dark small fw-bold">Engr. Maryam Bello</h6>
+                            <span class="badge bg-success-subtle text-success border border-success extra-small rounded-pill"><i class="fa fa-check-circle me-1"></i>Verified</span>
+                        </div>
+                    </div>
+                </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Gallery Grid End -->
+
+
+    <!-- 3. STUDENT DETAIL MODAL ON CLICK -->
+    <div class="modal fade" id="studentDetailModal" tabindex="-1" aria-labelledby="studentDetailModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 rounded-4 overflow-hidden shadow-lg">
+                <div class="modal-header bg-dark text-white border-bottom border-secondary py-3 px-4">
+                    <div class="d-flex align-items-center">
+                        <i class="fa fa-id-card text-primary fs-4 me-2"></i>
+                        <h5 class="modal-title text-white mb-0" id="studentDetailModalLabel">NUESA Student Profile</h5>
+                    </div>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4 bg-light">
+                    <div class="row align-items-stretch g-4">
+                        <div class="col-md-5 text-center d-flex flex-column">
+                            <div class="w-100 h-100 position-relative overflow-hidden rounded-4 shadow border border-3 border-primary bg-secondary">
+                                <img id="modalStudentImg" class="img-fluid w-100 h-100" src="img/project-1.jpg" alt="Student Portrait" style="min-height: 300px; object-fit: cover;">
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+                                <span class="badge bg-primary px-3 py-2 rounded-pill fw-bold" style="font-size: 0.85rem;"><i class="fa fa-id-badge me-1"></i><span id="modalStudentId">NUESA/UMD/2025/0101</span></span>
+                                <span id="modalVerificationBadgeContainer">
+                                    <span class="badge bg-success px-3 py-2 rounded-pill fw-semibold" style="font-size: 0.85rem;"><i class="fa fa-check-circle me-1"></i>Verified Member</span>
+                                </span>
+                            </div>
+                            <h3 id="modalStudentName" class="text-dark fw-bold mb-3">Comr. Ismail Isah Yusuf</h3>
+                            
+                            <div class="bg-white p-3 rounded-4 border shadow-sm">
+                                <div class="row g-3">
+                                    <div class="col-12">
+                                        <small class="text-muted d-block text-uppercase fw-semibold" style="font-size: 0.7rem; letter-spacing: 0.5px;">Department</small>
+                                        <span class="fw-bold text-dark fs-6 text-break"><i class="fa fa-university text-primary me-2"></i><span id="modalStudentDept">Civil & Water Resources Engineering</span></span>
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <small class="text-muted d-block text-uppercase fw-semibold" style="font-size: 0.7rem; letter-spacing: 0.5px;">Academic Class</small>
+                                        <span class="fw-semibold text-dark small d-block mt-1 text-break"><i class="fa fa-graduation-cap text-secondary me-2"></i><span id="modalStudentClass">Class of 2025 (500L)</span></span>
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <small class="text-muted d-block text-uppercase fw-semibold" style="font-size: 0.7rem; letter-spacing: 0.5px;">Position / Role</small>
+                                        <span class="fw-semibold text-dark small d-block mt-1 text-break"><i class="fa fa-user-shield text-primary me-2"></i><span id="modalStudentRole">NUESA President</span></span>
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <small class="text-muted d-block text-uppercase fw-semibold" style="font-size: 0.7rem; letter-spacing: 0.5px;">Phone Contact</small>
+                                        <span class="fw-semibold text-dark small d-block mt-1 text-break"><i class="fa fa-phone text-success me-2"></i><span id="modalStudentPhone">+234 803 456 7890</span></span>
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <small class="text-muted d-block text-uppercase fw-semibold" style="font-size: 0.7rem; letter-spacing: 0.5px;">State of Origin</small>
+                                        <span class="fw-semibold text-dark small d-block mt-1 text-break"><i class="fa fa-map-marker-alt text-danger me-2"></i><span id="modalStudentState">Borno State</span></span>
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <small class="text-muted d-block text-uppercase fw-semibold" style="font-size: 0.7rem; letter-spacing: 0.5px;">Joined Since</small>
+                                        <span class="fw-semibold text-dark small d-block mt-1 text-break"><i class="fa fa-calendar-check text-warning me-2"></i><span id="modalStudentJoined">October 2020</span></span>
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <small class="text-muted d-block text-uppercase fw-semibold" style="font-size: 0.7rem; letter-spacing: 0.5px;">Email Address</small>
+                                        <span class="fw-semibold text-dark small d-block mt-1 text-break"><i class="fa fa-envelope text-info me-2"></i><span id="modalStudentEmail">ismail.yusuf@eng.unimaid.edu.ng</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer bg-white border-top py-2 px-4">
+                    <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Close Profile</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark footer mt-5 py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4"><i class="fa fa-cogs text-secondary me-2"></i>NUESA UNIMAID</h5>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3 text-secondary"></i>Faculty of Engineering Complex, University of Maiduguri, Borno State, Nigeria</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3 text-secondary"></i>+234 800 NUESA UNIMAID</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3 text-secondary"></i>info@nuesaunimaid.org.ng</p>
+                    <div class="d-flex pt-3">
+                        <a class="btn btn-square btn-primary rounded-circle me-2" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-primary rounded-circle me-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-primary rounded-circle me-2" href="#"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-square btn-primary rounded-circle me-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Quick Links</h5>
+                    <a class="btn btn-link" href="index.html">Home Portal</a>
+                    <a class="btn btn-link" href="about.html">About NUESA</a>
+                    <a class="btn btn-link" href="resources.html">e-Resource Hub</a>
+                    <a class="btn btn-link" href="gallery.html">Student Album</a>
+                    <a class="btn btn-link" href="team.html">Leadership Officers</a>
+                    <a class="btn btn-link" href="contact.html">FAQ & Contact</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Engineering Departments</h5>
+                    <a class="btn btn-link" href="about.html#civil">Civil & Water Resources</a>
+                    <a class="btn btn-link" href="about.html#electrical">Electrical & Electronics</a>
+                    <a class="btn btn-link" href="about.html#mechanical">Mechanical Engineering</a>
+                    <a class="btn btn-link" href="about.html#agricultural">Agricultural & Env.</a>
+                    <a class="btn btn-link" href="about.html#computer">Computer Engineering</a>
+                    <a class="btn btn-link" href="about.html#chemical">Chemical & Food Science</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">NUESA Newsletter</h5>
+                    <p class="small text-muted">Subscribe to receive exam timetables, workshop alerts, and NUESA announcements.</p>
+                    <div class="position-relative w-100">
+                        <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5 text-white border-secondary" type="text" placeholder="Your student email">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright bg-dark py-4 border-top border-secondary">
+        <div class="container text-center">
+            <p class="mb-0">Copyright &copy; NUESA UNIMAID Chapter - University of Maiduguri. All Rights Reserved.</p>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <!-- Gallery Filter & Dynamic Modal Script -->
+    <script>
+        $(document).ready(function() {
+            // Category Filter Logic
+            $('.gallery-filter-btn').on('click', function() {
+                $('.gallery-filter-btn').removeClass('btn-primary active').addClass('btn-outline-primary');
+                $(this).removeClass('btn-outline-primary btn-outline-secondary').addClass('btn-primary active');
+                
+                var filter = $(this).attr('data-filter');
+                if (filter === 'all') {
+                    $('.gallery-item-col').fadeIn(300);
+                } else {
+                    $('.gallery-item-col').not('.' + filter).fadeOut(200);
+                    $('.gallery-item-col.' + filter).fadeIn(300);
+                }
+            });
+
+            // Dynamic Modal Data Injection
+            $('.gallery-item-card').on('click', function() {
+                var name = $(this).attr('data-name');
+                var dept = $(this).attr('data-dept');
+                var studentClass = $(this).attr('data-class');
+                var role = $(this).attr('data-role');
+                var phone = $(this).attr('data-phone') || '+234 800 000 0000';
+                var email = $(this).attr('data-email') || 'student@eng.unimaid.edu.ng';
+                var state = $(this).attr('data-state') || 'Borno State';
+                var joined = $(this).attr('data-joined') || 'October 2020';
+                var studentId = $(this).attr('data-id') || ('NUESA/UMD/2025/' + Math.floor(1000 + Math.random() * 9000));
+                var img = $(this).attr('data-img');
+                var verifiedStatus = $(this).attr('data-verified') || 'verified';
+
+                // Synchronize current user status if Ismail
+                if (name && name.toLowerCase().includes('ismail')) {
+                    const localStatus = localStorage.getItem('nuesa_verification_status');
+                    if (localStatus) {
+                        verifiedStatus = localStatus;
+                    }
+                }
+
+                $('#modalStudentName').text(name);
+                $('#modalStudentDept').text(dept);
+                $('#modalStudentClass').text(studentClass);
+                $('#modalStudentRole').text(role);
+                $('#modalStudentPhone').text(phone);
+                $('#modalStudentEmail').text(email);
+                $('#modalStudentState').text(state);
+                $('#modalStudentJoined').text(joined);
+                $('#modalStudentId').text(studentId);
+                $('#modalStudentImg').attr('src', img);
+
+                if (verifiedStatus === 'verified') {
+                    $('#modalVerificationBadgeContainer').html(`
+                        <span class="badge bg-success px-3 py-2 rounded-pill fw-semibold" style="font-size: 0.85rem;">
+                            <i class="fa fa-check-circle me-1"></i>Verified
+                        </span>
+                    `);
+                } else {
+                    $('#modalVerificationBadgeContainer').html(`
+                        <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-semibold" style="font-size: 0.85rem;">
+                            <i class="fa fa-clock me-1"></i>To be verified
+                        </span>
+                    `);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

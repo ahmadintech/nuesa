@@ -1,0 +1,460 @@
+@extends('layouts.frontend')
+
+@section('title', 'NUESA UNIMAID Chapter - Gateway to Engineering Excellence')
+
+@section('content')
+    <!-- 1. HERO SECTION -->
+    <div class="container-fluid px-0 mb-5">
+        <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <img class="w-100" src="{{ asset('img/carousel-1.jpg') }}" alt="NUESA UNIMAID Hero Image">
+                    <div class="carousel-caption">
+                        <div class="container">
+                            <div class="row justify-content-start">
+                                <div class="col-lg-10 text-start">
+                                    <p class="d-inline-block bg-primary text-white px-3 py-2 rounded-pill fs-6 fw-semibold text-uppercase animated slideInRight mb-3 shadow">
+                                        <i class="fa fa-handshake me-2 text-warning"></i>Welcome to NUESA UNIMAID
+                                    </p>
+                                    <h1 class="display-3 text-white mb-3 animated slideInRight">Gateway to Engineering Excellence</h1>
+                                    <p class="fs-5 text-light mb-4 d-none d-md-block animated slideInRight">Welcome to the official portal of NUESA UNIMAID — driving academic development, student welfare, innovation initiatives, and professional leadership across all engineering departments.</p>
+                                    <a href="{{ route('resources') }}" class="btn btn-primary rounded-pill shadow-sm py-3 px-4 animated slideInRight me-3"><i class="fa fa-book-open me-2"></i>Explore Resources</a>
+                                    <a href="{{ route('contact') }}#portal" class="btn btn-secondary rounded-pill shadow-sm py-3 px-4 animated slideInRight"><i class="fa fa-users me-2"></i>Join Network</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                    <img class="w-100" src="{{ asset('img/carousel-2.jpg') }}" alt="Faculty of Engineering UNIMAID">
+                    <div class="carousel-caption">
+                        <div class="container">
+                            <div class="row justify-content-start">
+                                <div class="col-lg-10 text-start">
+                                    <p class="d-inline-block bg-primary text-white px-3 py-2 rounded-pill fs-6 fw-semibold text-uppercase animated slideInRight mb-3 shadow">
+                                        <i class="fa fa-microchip me-2 text-warning"></i>Faculty of Engineering
+                                    </p>
+                                    <h1 class="display-3 text-white mb-3 animated slideInRight">NUESA UNIMAID Chapter</h1>
+                                    <p class="fs-5 text-light mb-4 d-none d-md-block animated slideInRight">Home of the annual Engineering Week, cultural carnivals, academic seminars, and student entrepreneurship in the Faculty of Engineering, University of Maiduguri.</p>
+                                    <a href="{{ route('resources') }}" class="btn btn-primary rounded-pill shadow-sm py-3 px-4 animated slideInRight me-3"><i class="fa fa-folder-open me-2"></i>Explore Resources</a>
+                                    <a href="{{ route('contact') }}#portal" class="btn btn-secondary rounded-pill shadow-sm py-3 px-4 animated slideInRight"><i class="fa fa-user-plus me-2"></i>Join Network</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <!-- Hero Section End -->
+
+
+    <!-- 2. ABOUT NUESA UNIMAID SECTION -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6">
+                    <div class="row gx-3 h-100">
+                        <div class="col-6 align-self-start wow fadeInUp" data-wow-delay="0.1s">
+                            <img class="img-fluid rounded-4 shadow-lg" src="{{ asset('img/about-1.jpg') }}" alt="Engineering Workshop">
+                        </div>
+                        <div class="col-6 align-self-end wow fadeInDown" data-wow-delay="0.1s">
+                            <img class="img-fluid rounded-4 shadow-lg" src="{{ asset('img/about-2.jpg') }}" alt="Engineering Students Project">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                    <p class="fw-medium text-uppercase text-primary mb-2"><i class="fa fa-university me-2"></i>About NUESA UNIMAID</p>
+                    <h1 class="display-5 mb-4">Uniting all Engineering Students</h1>
+                    <p class="mb-4">The Nigerian Universities Engineering Students Association (NUESA), University of Maiduguri Chapter, serves as the umbrella body representing all engineering students across 8 accredited departments in the Faculty of Engineering.</p>
+                    <div class="mb-4">
+                        <p class="mb-1 small"><i class="fa fa-check-circle text-primary me-2"></i>Agricultural & Environmental Resources Engineering</p>
+                        <p class="mb-1 small"><i class="fa fa-check-circle text-primary me-2"></i>Chemical Engineering</p>
+                        <p class="mb-1 small"><i class="fa fa-check-circle text-primary me-2"></i>Civil & Water Resources Engineering</p>
+                        <p class="mb-1 small"><i class="fa fa-check-circle text-primary me-2"></i>Computer Engineering</p>
+                        <p class="mb-1 small"><i class="fa fa-check-circle text-primary me-2"></i>Electrical & Electronics Engineering</p>
+                        <p class="mb-1 small"><i class="fa fa-check-circle text-primary me-2"></i>Food Science & Technology</p>
+                        <p class="mb-1 small"><i class="fa fa-check-circle text-primary me-2"></i>Mechanical Engineering</p>
+                        <p class="mb-0 small"><i class="fa fa-check-circle text-primary me-2"></i>Petroleum & Gas Engineering</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About Section End -->
+
+
+    <!-- 2.5 KEY STATS COUNTER SECTION -->
+    <div class="container-fluid py-5 my-4" style="background: linear-gradient(135deg, #008751 0%, #005a34 100%);">
+        <div class="container py-3">
+            <div class="row g-4 justify-content-center text-center">
+                <div class="col-6 col-md-3 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="p-3 text-white">
+                        <span class="material-symbols-outlined text-warning mb-2" style="font-size: 44px;">groups</span>
+                        <h2 class="display-5 text-white fw-bold mb-1"><span data-toggle="counter-up">2500</span>+</h2>
+                        <p class="mb-0 text-white-50 fw-medium">Engineering Students</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="p-3 text-white">
+                        <span class="material-symbols-outlined text-warning mb-2" style="font-size: 44px;">account_tree</span>
+                        <h2 class="display-5 text-white fw-bold mb-1" data-toggle="counter-up">8</h2>
+                        <p class="mb-0 text-white-50 fw-medium">Departments</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="p-3 text-white">
+                        <span class="material-symbols-outlined text-warning mb-2" style="font-size: 44px;">badge</span>
+                        <h2 class="display-5 text-white fw-bold mb-1" data-toggle="counter-up">15</h2>
+                        <p class="mb-0 text-white-50 fw-medium">Executive Members</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="p-3 text-white">
+                        <span class="material-symbols-outlined text-warning mb-2" style="font-size: 44px;">menu_book</span>
+                        <h2 class="display-5 text-white fw-bold mb-1"><span data-toggle="counter-up">500</span>+</h2>
+                        <p class="mb-0 text-white-50 fw-medium">Academic Resources</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- KEY STATS COUNTER SECTION END -->
+
+
+    <!-- 3. STRATEGIC PILLARS SECTION -->
+    <div class="container-fluid py-5 bg-light my-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p class="fw-medium text-uppercase text-primary mb-2"><i class="fa fa-cubes me-2"></i>Core Chapter Activities</p>
+                <h1 class="display-5 mb-4">Advancing Student Potential & Culture</h1>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="card border-0 shadow-sm h-100 p-4 p-xl-5 text-center bg-white position-relative overflow-hidden" style="border-radius: 28px !important; border-top: 5px solid #008751 !important;">
+                        <div class="bg-primary text-white p-3 rounded-circle d-inline-flex align-items-center justify-content-center mx-auto mb-4 shadow-sm" style="width: 72px; height: 72px;">
+                            <i class="fa fa-graduation-cap fa-2x"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3 text-dark">Academic Development</h5>
+                        <p class="small text-muted mb-0 lh-base">Organizing lectures, academic seminars, textbooks, laboratory equipment support, and past question archives.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="card border-0 shadow-sm h-100 p-4 p-xl-5 text-center bg-white position-relative overflow-hidden" style="border-radius: 28px !important; border-top: 5px solid #ffc107 !important;">
+                        <div class="bg-secondary text-white p-3 rounded-circle d-inline-flex align-items-center justify-content-center mx-auto mb-4 shadow-sm" style="width: 72px; height: 72px;">
+                            <i class="fa fa-calendar-alt fa-2x"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3 text-dark">Engineering Week</h5>
+                        <p class="small text-muted mb-0 lh-base">Hosting annual cultural carnivals, design competitions, social events, awards, and keynote lectures.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="card border-0 shadow-sm h-100 p-4 p-xl-5 text-center bg-white position-relative overflow-hidden" style="border-radius: 28px !important; border-top: 5px solid #008751 !important;">
+                        <div class="bg-primary text-white p-3 rounded-circle d-inline-flex align-items-center justify-content-center mx-auto mb-4 shadow-sm" style="width: 72px; height: 72px;">
+                            <i class="fa fa-hands-helping fa-2x"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3 text-dark">Welfare & Leadership</h5>
+                        <p class="small text-muted mb-0 lh-base">Advocating for basic amenities, faculty facilities, community service, and professional mentorship.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Strategic Pillars End -->
+
+
+    <!-- 4. KEY FACULTY & CHAPTER LEADERS SECTION -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p class="fw-medium text-uppercase text-primary mb-2">Leadership Spotlight</p>
+                <h1 class="display-5 mb-4">Key Faculty & Chapter Leaders</h1>
+            </div>
+
+            <div class="row g-4 align-items-center justify-content-center">
+                <!-- Left Card: Dean, Faculty of Engineering -->
+                <div class="col-lg-4 col-md-6 order-2 order-lg-1 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="card leader-card border-0 rounded-4 bg-white shadow h-100 py-3">
+                        <div class="text-center pt-3">
+                            <div class="mb-3">
+                                <span class="bg-primary text-white text-uppercase px-3 py-1 rounded-pill small fw-bold">Faculty Dean</span>
+                            </div>
+                            <img class="leader-avatar-circle img-fluid shadow-lg" src="{{ asset('img/team-1.jpg') }}" alt="Dean, Faculty of Engineering">
+                        </div>
+                        <div class="card-body p-4 text-center">
+                            <h4 class="card-title text-dark mb-1">Prof. B. G. Umara</h4>
+                            <p class="text-primary fw-medium mb-3"><i class="fa fa-graduation-cap me-1"></i>Dean, Faculty of Engineering</p>
+                            <a href="{{ route('team') }}" class="btn btn-sm btn-outline-primary mt-2 rounded-pill px-4"><i class="fa fa-user me-1"></i>View Profile</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Center Card (Prominent / Larger / Elevated): NUESA President -->
+                <div class="col-lg-4 col-md-6 order-1 order-lg-2 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="card leader-card border border-3 border-primary rounded-4 bg-white shadow-lg h-100 py-3" style="transform: scale(1.05); z-index: 2;">
+                        <div class="text-center pt-3">
+                            <div class="mb-3">
+                                <span class="bg-secondary text-white text-uppercase px-3 py-1 rounded-pill small fw-bold"><i class="fa fa-star me-1"></i>NUESA President</span>
+                            </div>
+                            <img class="leader-avatar-circle-lg img-fluid shadow-lg" src="{{ asset('img/project-1.jpg') }}" alt="NUESA President">
+                        </div>
+                        <div class="card-body p-4 text-center">
+                            <h3 class="card-title text-dark fw-bold mb-1">Comr. Ismail Isah Yusuf</h3>
+                            <p class="text-secondary fs-6 fw-bold mb-3"><i class="fa fa-user-tie me-1"></i>NUESA President (UNIMAID Chapter)</p>
+                            <div class="d-flex justify-content-center gap-2 my-3">
+                                <a class="btn btn-square btn-outline-primary btn-sm rounded-circle" href="#"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-outline-primary btn-sm rounded-circle" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn btn-square btn-outline-primary btn-sm rounded-circle" href="#"><i class="fa fa-envelope"></i></a>
+                            </div>
+                            <a href="{{ route('team') }}" class="btn btn-primary px-4 py-2 mt-1 rounded-pill shadow"><i class="fa fa-users me-1"></i>Meet Executive Cabinet</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Card: Staff Adviser -->
+                <div class="col-lg-4 col-md-6 order-3 order-lg-3 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="card leader-card border-0 rounded-4 bg-white shadow h-100 py-3">
+                        <div class="text-center pt-3">
+                            <div class="mb-3">
+                                <span class="bg-primary text-white text-uppercase px-3 py-1 rounded-pill small fw-bold">Staff Adviser</span>
+                            </div>
+                            <img class="leader-avatar-circle img-fluid shadow-lg" src="{{ asset('img/team-2.jpg') }}" alt="Staff Adviser">
+                        </div>
+                        <div class="card-body p-4 text-center">
+                            <h4 class="card-title text-dark mb-1">Dr. K. M. Bulama</h4>
+                            <p class="text-primary fw-medium mb-3"><i class="fa fa-user-shield me-1"></i>NUESA Staff Adviser</p>
+                            <a href="{{ route('team') }}" class="btn btn-sm btn-outline-primary mt-2 rounded-pill px-4"><i class="fa fa-user me-1"></i>View Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Key Leaders End -->
+
+
+    <!-- 4.5 LATEST NEWS & UPCOMING EVENTS SECTION -->
+    <div class="container-fluid py-5 bg-light my-5">
+        <div class="container">
+            <div class="text-center mx-auto pb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 650px;">
+                <p class="fw-medium text-uppercase text-primary mb-2">
+                    <span class="material-symbols-outlined align-middle me-1" style="font-size: 20px;">newspaper</span>NUESA Updates & Announcements
+                </p>
+                <h1 class="display-5 mb-4">Latest News & Upcoming Events</h1>
+            </div>
+
+            <!-- News Cards Grid -->
+            <div class="row g-4 mb-4">
+                @forelse($news as $index => $item)
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="{{ 0.1 * ($index + 1) }}s">
+                        <div class="card border-0 rounded-4 shadow-sm h-100 bg-white overflow-hidden" style="border-radius: 24px !important;">
+                            <div class="position-relative overflow-hidden" style="height: 260px;">
+                                <img class="img-fluid w-100 h-100" src="{{ asset($item->featured_image ?? 'img/project-1.jpg') }}" alt="{{ $item->title }}" style="object-fit: cover;">
+                                <span class="badge bg-primary position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill shadow-sm">{{ $item->category }}</span>
+                            </div>
+                            <div class="card-body p-4 d-flex flex-column">
+                                <div class="d-flex align-items-center text-muted small mb-3">
+                                    <span class="d-flex align-items-center me-3">
+                                        <span class="material-symbols-outlined text-primary me-1" style="font-size: 18px;">calendar_today</span> {{ $item->published_at ? \Carbon\Carbon::parse($item->published_at)->format('M d, Y') : 'Aug 28, 2026' }}
+                                    </span>
+                                    <span class="d-flex align-items-center">
+                                        <span class="material-symbols-outlined text-primary me-1" style="font-size: 18px;">person</span> NUESA Execs
+                                    </span>
+                                </div>
+                                <h5 class="card-title fw-bold text-dark mb-2"><a href="{{ route('news.show', $item->slug) }}" class="text-dark text-decoration-none">{{ $item->title }}</a></h5>
+                                <p class="card-text text-muted small flex-grow-1 mb-4">{{ $item->summary }}</p>
+                                <div>
+                                    <a href="{{ route('news.show', $item->slug) }}" class="btn btn-outline-primary rounded-pill px-4 py-2 btn-sm fw-semibold d-inline-flex align-items-center">
+                                        Read Details <span class="material-symbols-outlined ms-1" style="font-size: 18px;">arrow_forward</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @empty
+                    <div class="col-12 text-center text-muted py-4">No recent news published yet.</div>
+                @endforelse
+            </div>
+
+            <!-- Direct CTA to Full News Center -->
+            <div class="text-center wow fadeInUp" data-wow-delay="0.4s">
+                <a href="{{ route('news') }}" class="btn btn-primary rounded-pill py-3 px-5 fs-6 fw-bold shadow-sm d-inline-flex align-items-center">
+                    <span class="material-symbols-outlined me-2">newspaper</span>View All News & Events <span class="material-symbols-outlined ms-2">arrow_forward</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- News & Events Section End -->
+
+
+    <!-- 5. FAQ ACCORDION SECTION -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <p class="fw-medium text-uppercase text-primary mb-2">Student Assistance</p>
+                    <h1 class="display-5 mb-4">Frequently Asked Questions</h1>
+                    <p class="mb-4">Find answers to common student inquiries regarding departmental registration, dues payment, library access, and NUESA events.</p>
+
+                    <div class="accordion" id="homepageFaq">
+                        <!-- FAQ 1 -->
+                        <div class="accordion-item border-0 mb-3 rounded shadow-sm">
+                            <h2 class="accordion-header" id="faqHead1">
+                                <button class="accordion-button fw-bold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#faqCol1">
+                                    How do I pay my annual NUESA Departmental Dues?
+                                </button>
+                            </h2>
+                            <div id="faqCol1" class="accordion-collapse collapse show" data-bs-parent="#homepageFaq">
+                                <div class="accordion-body text-muted">
+                                    Annual NUESA dues are payable at the NUESA Secretariat (Faculty of Engineering Complex) or through the student online portal. Ensure you retain your physical or digital receipt for clearance.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 2 -->
+                        <div class="accordion-item border-0 mb-3 rounded shadow-sm">
+                            <h2 class="accordion-header" id="faqHead2">
+                                <button class="accordion-button collapsed fw-bold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#faqCol2">
+                                    How can I download PDF lecture notes and past question papers?
+                                </button>
+                            </h2>
+                            <div id="faqCol2" class="accordion-collapse collapse" data-bs-parent="#homepageFaq">
+                                <div class="accordion-body text-muted">
+                                    Navigate to our <strong><a href="{{ route('resources') }}">Resources Hub</a></strong>. Filter by your level (100L to 500L) or department to download free course notes, tutorial guides, and past examination papers.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 3 -->
+                        <div class="accordion-item border-0 mb-3 rounded shadow-sm">
+                            <h2 class="accordion-header" id="faqHead3">
+                                <button class="accordion-button collapsed fw-bold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#faqCol3">
+                                    What are the requirements for SIWES industrial logbook clearance?
+                                </button>
+                            </h2>
+                            <div id="faqCol3" class="accordion-collapse collapse" data-bs-parent="#homepageFaq">
+                                <div class="accordion-body text-muted">
+                                    For 400L students returning from industrial attachment, logbooks must be signed by your industry supervisor, accompanied by your technical report, and submitted to your departmental SIWES coordinator.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 4 -->
+                        <div class="accordion-item border-0 mb-3 rounded shadow-sm">
+                            <h2 class="accordion-header" id="faqHead4">
+                                <button class="accordion-button collapsed fw-bold text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#faqCol4">
+                                    How do I register for Engineering Week competitions & bootcamps?
+                                </button>
+                            </h2>
+                            <div id="faqCol4" class="accordion-collapse collapse" data-bs-parent="#homepageFaq">
+                                <div class="accordion-body text-muted">
+                                    Registration links for hackathons, CAD design contests, and sports tournaments are published on our news portal and social handles two weeks before Engineering Week.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="bg-dark text-white p-5 rounded shadow-lg">
+                        <h3 class="text-white mb-3"><i class="fa fa-question-circle text-secondary me-2"></i>Have More Questions?</h3>
+                        <p class="text-light mb-4">Reach out directly to the NUESA Secretariat or submit your inquiry to our student helpdesk team.</p>
+                        <a href="{{ route('contact') }}" class="btn btn-primary py-3 px-4 w-100 mb-3"><i class="fa fa-envelope me-2"></i>Contact Secretariat Helpdesk</a>
+                        <a href="{{ route('contact') }}#portal" class="btn btn-outline-light py-3 px-4 w-100"><i class="fa fa-user-lock me-2"></i>Access Student Portal</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FAQ End -->
+
+
+    <!-- DEPARTMENTAL LOGOS INFINITE SCROLLING MARQUEE (LIGHT THEME - PRE-FOOTER) -->
+    <div class="dept-marquee-section mt-5 mb-0">
+        <div class="container text-center mb-3">
+            <small class="text-uppercase text-primary fw-bold letter-spacing-2"><i class="fa fa-university me-2"></i>Faculty of Engineering Departments</small>
+        </div>
+        <div class="dept-marquee-wrapper">
+            <div class="dept-marquee-track">
+                <!-- SET 1 -->
+                <div class="dept-logo-card">
+                    <div class="dept-logo-icon-box"><img src="{{ asset('img/logos/NICE - Civil.jpeg') }}" alt="NICE Civil Logo" class="dept-logo-img"></div>
+                    <div><h6 class="dept-logo-name">CIVIL & WATER RESOURCES ENG.</h6></div>
+                </div>
+                <div class="dept-logo-card">
+                    <div class="dept-logo-icon-box"><img src="{{ asset('img/logos/NIEEE.jpeg') }}" alt="NIEEE Electrical Logo" class="dept-logo-img"></div>
+                    <div><h6 class="dept-logo-name">ELECTRICAL & ELECTRONICS ENG.</h6></div>
+                </div>
+                <div class="dept-logo-card">
+                    <div class="dept-logo-icon-box"><img src="{{ asset('img/logos/NIMECH.jpeg') }}" alt="NIMechE Mechanical Logo" class="dept-logo-img"></div>
+                    <div><h6 class="dept-logo-name">MECHANICAL ENGINEERING</h6></div>
+                </div>
+                <div class="dept-logo-card">
+                    <div class="dept-logo-icon-box"><img src="{{ asset('img/logos/NACOMES.jpeg') }}" alt="NACOMES Computer Logo" class="dept-logo-img"></div>
+                    <div><h6 class="dept-logo-name">COMPUTER ENGINEERING</h6></div>
+                </div>
+                <div class="dept-logo-card">
+                    <div class="dept-logo-icon-box"><img src="{{ asset('img/logos/NSCHE.jpeg') }}" alt="NSChE Chemical Logo" class="dept-logo-img"></div>
+                    <div><h6 class="dept-logo-name">CHEMICAL ENGINEERING</h6></div>
+                </div>
+                <div class="dept-logo-card">
+                    <div class="dept-logo-icon-box"><img src="{{ asset('img/logos/NIAE.jpeg') }}" alt="NIAE Agricultural Logo" class="dept-logo-img"></div>
+                    <div><h6 class="dept-logo-name">AGRICULTURAL & ENV. RESOURCES ENG.</h6></div>
+                </div>
+                <div class="dept-logo-card">
+                    <div class="dept-logo-icon-box"><img src="{{ asset('img/logos/NICFoST.jpeg') }}" alt="NIFST Food Science Logo" class="dept-logo-img"></div>
+                    <div><h6 class="dept-logo-name">FOOD SCIENCE & TECHNOLOGY</h6></div>
+                </div>
+                <div class="dept-logo-card">
+                    <div class="dept-logo-icon-box"><img src="{{ asset('img/logos/SPE_Petroleum.png') }}" alt="Petroleum & Gas Engineering Logo" class="dept-logo-img"></div>
+                    <div><h6 class="dept-logo-name">PETROLEUM & GAS ENG.</h6></div>
+                </div>
+
+                <!-- DUPLICATE SET 2 FOR SEAMLESS INFINITE LOOP -->
+                <div class="dept-logo-card">
+                    <div class="dept-logo-icon-box"><img src="{{ asset('img/logos/NICE - Civil.jpeg') }}" alt="NICE Civil Logo" class="dept-logo-img"></div>
+                    <div><h6 class="dept-logo-name">CIVIL & WATER RESOURCES ENG.</h6></div>
+                </div>
+                <div class="dept-logo-card">
+                    <div class="dept-logo-icon-box"><img src="{{ asset('img/logos/NIEEE.jpeg') }}" alt="NIEEE Electrical Logo" class="dept-logo-img"></div>
+                    <div><h6 class="dept-logo-name">ELECTRICAL & ELECTRONICS ENG.</h6></div>
+                </div>
+                <div class="dept-logo-card">
+                    <div class="dept-logo-icon-box"><img src="{{ asset('img/logos/NIMECH.jpeg') }}" alt="NIMechE Mechanical Logo" class="dept-logo-img"></div>
+                    <div><h6 class="dept-logo-name">MECHANICAL ENGINEERING</h6></div>
+                </div>
+                <div class="dept-logo-card">
+                    <div class="dept-logo-icon-box"><img src="{{ asset('img/logos/NACOMES.jpeg') }}" alt="NACOMES Computer Logo" class="dept-logo-img"></div>
+                    <div><h6 class="dept-logo-name">COMPUTER ENGINEERING</h6></div>
+                </div>
+                <div class="dept-logo-card">
+                    <div class="dept-logo-icon-box"><img src="{{ asset('img/logos/NSCHE.jpeg') }}" alt="NSChE Chemical Logo" class="dept-logo-img"></div>
+                    <div><h6 class="dept-logo-name">CHEMICAL ENGINEERING</h6></div>
+                </div>
+                <div class="dept-logo-card">
+                    <div class="dept-logo-icon-box"><img src="{{ asset('img/logos/NIAE.jpeg') }}" alt="NIAE Agricultural Logo" class="dept-logo-img"></div>
+                    <div><h6 class="dept-logo-name">AGRICULTURAL & ENV. RESOURCES ENG.</h6></div>
+                </div>
+                <div class="dept-logo-card">
+                    <div class="dept-logo-icon-box"><img src="{{ asset('img/logos/NICFoST.jpeg') }}" alt="NIFST Food Science Logo" class="dept-logo-img"></div>
+                    <div><h6 class="dept-logo-name">FOOD SCIENCE & TECHNOLOGY</h6></div>
+                </div>
+                <div class="dept-logo-card">
+                    <div class="dept-logo-icon-box"><img src="{{ asset('img/logos/SPE_Petroleum.png') }}" alt="Petroleum & Gas Engineering Logo" class="dept-logo-img"></div>
+                    <div><h6 class="dept-logo-name">PETROLEUM & GAS ENG.</h6></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Marquee End -->
+@endsection

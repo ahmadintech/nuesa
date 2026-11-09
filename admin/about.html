@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>NUESA Admin Portal - Home & About Us Manager</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="NUESA UNIMAID Home Page Hero, Dean Address, About Us, Mission & Core Values Manager" name="description">
+
+    <!-- Favicon -->
+    <link href="../img/logos/NUESA logo.jpeg" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Rubik:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Dashboard Stylesheet -->
+    <link href="../css/dashboard.css" rel="stylesheet">
+
+    <style>
+        .profile-input-group .input-group-text {
+            background-color: #f8f9fa !important;
+            border-color: #e2e8f0 !important;
+            color: #64748b !important;
+            border-top-left-radius: 14px !important;
+            border-bottom-left-radius: 14px !important;
+        }
+
+        .profile-input-group .form-control,
+        .profile-input-group .form-select {
+            background-color: #f8f9fa !important;
+            border-color: #e2e8f0 !important;
+            border-top-right-radius: 14px !important;
+            border-bottom-right-radius: 14px !important;
+            padding: 12px 16px;
+            font-size: 0.95rem;
+            color: #1e293b;
+        }
+
+        .profile-input-group .form-control:focus,
+        .profile-input-group .form-select:focus {
+            background-color: #ffffff !important;
+            border-color: #008751 !important;
+            box-shadow: 0 0 0 4px rgba(0, 135, 81, 0.1) !important;
+        }
+
+        .hero-banner-preview {
+            height: 220px;
+            border-radius: 16px;
+            background: linear-gradient(rgba(0, 135, 81, 0.8), rgba(0, 96, 56, 0.9)), url('../img/carousel-1.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            text-align: center;
+            padding: 24px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Mobile Drawer Backdrop -->
+    <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
+
+    <div class="app-wrapper">
+
+        <!-- 1. LIGHT ADMIN SIDEBAR -->
+        <aside class="app-sidebar" id="appSidebar">
+            <div>
+                <div class="sidebar-header">
+                    <a href="index.html" class="d-flex align-items-center text-decoration-none">
+                        <img src="../img/logos/NUESA logo.jpeg" alt="NUESA UNIMAID Admin" class="rounded-circle me-2" style="width: 40px; height: 40px; object-fit: cover; border: 2px solid #008751;">
+                        <div class="brand-text">
+                            <div class="fw-bold text-dark leading-none" style="letter-spacing: -0.3px;">NUESA ADMIN</div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="sidebar-menu">
+                    <div class="menu-category">Command Center</div>
+                    <a href="index.html" class="sidebar-link" title="Admin Overview">
+                        <span class="material-symbols-outlined">dashboard</span>
+                        <span class="sidebar-text">Overview</span>
+                    </a>
+                    <a href="users.html" class="sidebar-link" title="Students Directory & Control">
+                        <span class="material-symbols-outlined">manage_accounts</span>
+                        <span class="sidebar-text">Students</span>
+                    </a>
+
+                    <div class="menu-category">Governance & Financials</div>
+                    <a href="payments.html" class="sidebar-link" title="Payments & Dues Control">
+                        <span class="material-symbols-outlined">payments</span>
+                        <span class="sidebar-text">Payments</span>
+                    </a>
+                    <a href="elections.html" class="sidebar-link" title="Elections Control Panel">
+                        <span class="material-symbols-outlined">how_to_vote</span>
+                        <span class="sidebar-text">Elections</span>
+                    </a>
+                    <a href="posts.html" class="sidebar-link" title="News & Announcements">
+                        <span class="material-symbols-outlined">newspaper</span>
+                        <span class="sidebar-text">News</span>
+                    </a>
+
+                    <div class="menu-category">Content & Media</div>
+                    <a href="home.html" class="sidebar-link" title="Public Home Page Manager">
+                        <span class="material-symbols-outlined">home</span>
+                        <span class="sidebar-text">Home Page</span>
+                    </a>
+                    <a href="about.html" class="sidebar-link active" title="Home & About Us Manager">
+                        <span class="material-symbols-outlined">info</span>
+                        <span class="sidebar-text">About Us</span>
+                    </a>
+                    <a href="gallery.html" class="sidebar-link" title="Faculty Gallery & Events">
+                        <span class="material-symbols-outlined">photo_library</span>
+                        <span class="sidebar-text">Gallery</span>
+                    </a>
+                    <a href="resources.html" class="sidebar-link" title="Academic Resources & Downloads">
+                        <span class="material-symbols-outlined">folder_zip</span>
+                        <span class="sidebar-text">Resources</span>
+                    </a>
+                    <a href="staff.html" class="sidebar-link" title="Staff Directory">
+                        <span class="material-symbols-outlined">badge</span>
+                        <span class="sidebar-text">Staff Directory</span>
+                    </a>
+
+
+                    <div class="menu-category">System Configuration</div>
+                    <a href="settings.html" class="sidebar-link" title="Settings">
+                        <span class="material-symbols-outlined">settings</span>
+                        <span class="sidebar-text">Settings</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <a href="../dashboard/index.html" class="sidebar-link mb-2 text-success" title="Student Dashboard">
+                    <span class="material-symbols-outlined">school</span>
+                    <span class="sidebar-text">Student Portal</span>
+                </a>
+                <a href="../login.html" class="sidebar-link text-danger mb-0" title="Logout Admin">
+                    <span class="material-symbols-outlined">logout</span>
+                    <span class="sidebar-text">Logout Executive</span>
+                </a>
+            </div>
+        </aside>
+
+
+        <!-- 2. MAIN WORKSPACE AREA -->
+        <main class="app-main">
+
+            <!-- APP TOPBAR HEADER -->
+            <header class="app-topbar">
+                <div class="d-flex align-items-center flex-grow-1 me-3">
+                    <button class="btn btn-light me-3 rounded-circle p-2 shadow-sm border d-none d-lg-flex align-items-center justify-content-center" id="topbarCollapseBtn" onclick="toggleSidebar()" title="Collapse Sidebar" style="width: 42px; height: 42px;">
+                        <i class="fa fa-chevron-left text-muted fs-6" id="collapseArrowIcon"></i>
+                    </button>
+
+                    <button class="btn btn-light me-3 d-lg-none rounded-circle p-2 shadow-sm border" onclick="toggleSidebar()" title="Toggle Menu" style="width: 42px; height: 42px;">
+                        <i class="fa fa-bars text-dark fs-5"></i>
+                    </button>
+
+                    <div class="topbar-search d-none d-md-block flex-grow-1">
+                        <span class="material-symbols-outlined search-icon">search</span>
+                        <input type="text" class="form-control" placeholder="Search about us, headlines, Dean address, mission...">
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center gap-3">
+                    <!-- Notification Bell Dropdown -->
+                    <div class="dropdown">
+                        <button class="btn btn-light rounded-circle p-2 shadow-sm border position-relative" data-bs-toggle="dropdown" title="Notifications" style="width: 42px; height: 42px;">
+                            <span class="material-symbols-outlined text-dark">notifications</span>
+                            <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle">
+                                <span class="visually-hidden">New alerts</span>
+                            </span>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end shadow-lg border-0 rounded-4 p-3 mt-2" style="width: 320px;">
+                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                <h6 class="fw-bold text-dark mb-0">Executive Alerts</h6>
+                                <span class="badge bg-success-subtle text-success rounded-pill">3 New</span>
+                            </div>
+                            <div class="mb-2 p-2 bg-light rounded-3">
+                                <div class="fw-bold text-dark extra-small">New Dues Payment</div>
+                                <div class="text-muted extra-small">Receipt #NUESA-2025-984 generated for Ismail Yusuf.</div>
+                            </div>
+                            <div class="mb-2 p-2 bg-light rounded-3">
+                                <div class="fw-bold text-dark extra-small">Candidate Application</div>
+                                <div class="text-muted extra-small">New presidential filing from Computer Eng.</div>
+                            </div>
+                            <div class="p-2 bg-light rounded-3">
+                                <div class="fw-bold text-dark extra-small">Verification Audit</div>
+                                <div class="text-muted extra-small">14 student profiles awaiting clearance review.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Admin Profile Dropdown -->
+                    <div class="dropdown">
+                        <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle p-1 rounded-pill bg-light border shadow-sm" data-bs-toggle="dropdown">
+                            <img src="../img/team-1.jpg" alt="Admin Executive" class="rounded-circle me-2" style="width: 36px; height: 36px; object-fit: cover; border: 2px solid #008751;">
+                            <div class="text-start d-none d-md-block me-2">
+                                <div class="fw-bold text-dark leading-none small">Engr. Admin Yusuf</div>
+                                <div class="text-muted extra-small" style="font-size: 10px;">Executive Admin</div>
+                            </div>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end shadow-lg border-0 rounded-4 p-2 mt-2" style="min-width: 220px;">
+                            <div class="p-3 bg-light rounded-3 mb-2">
+                                <div class="fw-bold text-dark">Engr. Admin Yusuf</div>
+                                <div class="extra-small text-muted">admin@nuesa-unimaid.edu.ng</div>
+                                <span class="badge bg-success-subtle text-success rounded-pill px-2 py-1 mt-1 extra-small">Executive Credentials</span>
+                            </div>
+                            <a href="settings.html" class="dropdown-item rounded-2 py-2"><i class="fa fa-user-cog text-primary me-2"></i>Admin Settings</a>
+                            <a href="../dashboard/index.html" class="dropdown-item rounded-2 py-2"><i class="fa fa-school text-success me-2"></i>Switch to Student Portal</a>
+                            <hr class="dropdown-divider">
+                            <a href="../login.html" class="dropdown-item rounded-2 py-2 text-danger"><i class="fa fa-sign-out-alt me-2"></i>Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+
+            <!-- WORKSPACE CONTENT -->
+            <div class="app-content">
+
+                <!-- Header Banner -->
+                <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between mb-4 gap-3">
+                    <div>
+                        <h3 class="fw-bold text-dark mb-1">About Us Page Manager</h3>
+                        <p class="text-muted small mb-0">Manage President address, NUESA Executive Council (Excos), Mission & Vision, and department lists.</p>
+                    </div>
+                    <div class="d-flex gap-2">
+                        <a href="../about.html" target="_blank" class="btn btn-outline-success rounded-pill px-3 py-2 fw-bold small d-inline-flex align-items-center">
+                            <i class="fa fa-external-link-alt me-2"></i>View Public About
+                        </a>
+                        <button class="btn btn-success rounded-pill px-4 py-2 fw-bold shadow-sm d-inline-flex align-items-center text-nowrap" onclick="saveAboutChanges()" style="background: linear-gradient(135deg, #008751 0%, #006038 100%); border: none;">
+                            <i class="fa fa-save me-2"></i>Save Page Content
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Alert Feedback Box -->
+                <div id="aboutAlert" class="alert alert-success alert-dismissible fade show rounded-4 d-none mb-4" role="alert">
+                    <i class="fa fa-check-circle me-2"></i><span id="aboutAlertText">About Us content updated successfully! Live website reflects changes.</span>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+
+                <!-- SECTION 1: PRESIDENT'S WELCOME ADDRESS -->
+                <div class="dash-card p-4 p-md-5 mb-4">
+                    <h5 class="fw-bold text-dark mb-3 border-bottom pb-2"><i class="fa fa-quote-left text-success me-2"></i>President's Welcome Address</h5>
+
+                    <div class="row g-4 align-items-center">
+                        <div class="col-md-4 text-center">
+                            <div class="position-relative d-inline-block mb-3">
+                                <img src="../img/team-1.jpg" alt="NUESA President" class="rounded-circle shadow" style="width: 140px; height: 140px; object-fit: cover; border: 4px solid #008751;">
+                                <button type="button" class="btn btn-sm btn-light rounded-circle shadow position-absolute bottom-0 end-0 p-2 border" title="Change Photo" onclick="$(this).next('input[type=file]').click()">
+                                    <i class="fa fa-camera text-success"></i>
+                                </button>
+                                <input type="file" class="d-none" accept="image/*" onchange="alert('Selected new photo for President: ' + (this.files[0] ? this.files[0].name : ''))">
+                            </div>
+                            <div class="fw-bold text-dark">Comr. Ismail Isah Yusuf</div>
+                            <div class="text-success extra-small fw-bold mb-2">NUESA President (2025/2026 Session)</div>
+                            <button type="button" class="btn btn-sm btn-outline-success rounded-pill px-3 extra-small fw-bold" onclick="$(this).prev().prev().prev().find('input[type=file]').click()">
+                                <i class="fa fa-image me-1"></i>Change President Photo
+                            </button>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <label class="form-label fw-bold text-dark small">Key Quote / Tagline</label>
+                                    <div class="input-group profile-input-group">
+                                        <span class="input-group-text"><span class="material-symbols-outlined">format_quote</span></span>
+                                        <input type="text" class="form-control" value="Building world-class engineers through innovation, academic integrity, and dedicated student advocacy.">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-bold text-dark small">Full Address Speech Content</label>
+                                    <div class="input-group profile-input-group">
+                                        <span class="input-group-text"><span class="material-symbols-outlined">notes</span></span>
+                                        <textarea class="form-control" rows="5">On behalf of the Executive Council and the entire engineering student body of the University of Maiduguri, I warmly welcome you to our official web portal. Founded over 25 years ago, NUESA UNIMAID has grown into a vibrant umbrella body uniting over 2,500 students across 8 accredited engineering departments.</textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION 2: NUESA EXECUTIVE COUNCIL (EXCOS) MANAGER -->
+                <div class="dash-card p-4 p-md-5 mb-4">
+                    <div class="d-flex align-items-center justify-content-between mb-3 border-bottom pb-2">
+                        <div>
+                            <h5 class="fw-bold text-dark mb-0"><i class="fa fa-users text-primary me-2"></i>NUESA Executive Council (Excos)</h5>
+                            <div class="text-muted extra-small">Manage student leadership officers for the 2025/2026 Academic Session</div>
+                        </div>
+                        <button class="btn btn-sm btn-outline-success rounded-pill px-3 fw-bold" data-bs-toggle="modal" data-bs-target="#addExcoModal">
+                            <i class="fa fa-plus-circle me-1"></i>Add Exco Member
+                        </button>
+                    </div>
+
+                    <div class="row g-4" id="excoGrid">
+                        <!-- Exco 1: President -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="p-3 border rounded-4 bg-light h-100 position-relative">
+                                <button class="btn btn-sm btn-light text-danger rounded-circle position-absolute top-0 end-0 m-2 border shadow-sm" style="z-index: 5;" onclick="if(confirm('Remove this Exco member from executive council list?')) $(this).closest('.col-md-6').remove();" title="Remove Exco Member"><i class="fa fa-trash"></i></button>
+                                <div class="d-flex align-items-center gap-3 mb-3">
+                                    <div class="position-relative">
+                                        <img src="../img/team-1.jpg" alt="President" class="rounded-circle" style="width: 65px; height: 65px; object-fit: cover; border: 2px solid #008751;">
+                                        <button class="btn btn-sm btn-light rounded-circle shadow position-absolute bottom-0 end-0 p-1 border" title="Change Photo" onclick="$(this).next('input[type=file]').click()" style="width: 24px; height: 24px; line-height: 1;">
+                                            <i class="fa fa-camera text-success extra-small" style="font-size: 10px;"></i>
+                                        </button>
+                                        <input type="file" class="d-none" accept="image/*">
+                                    </div>
+                                    <div>
+                                        <span class="badge bg-primary-subtle text-primary rounded-pill px-2 py-1 extra-small fw-bold mb-1">Exco 1</span>
+                                        <div class="fw-bold text-dark small">Comr. Ismail Isah Yusuf</div>
+                                        <div class="text-muted extra-small">Civil Engineering</div>
+                                    </div>
+                                </div>
+                                <div class="mb-2">
+                                    <label class="form-label extra-small fw-bold mb-1">Full Name</label>
+                                    <input type="text" class="form-control form-control-sm rounded-pill" value="Comr. Ismail Isah Yusuf">
+                                </div>
+                                <div class="mb-2">
+                                    <label class="form-label extra-small fw-bold mb-1">Office / Position</label>
+                                    <input type="text" class="form-control form-control-sm rounded-pill" value="NUESA President">
+                                </div>
+                                <div class="mb-2">
+                                    <label class="form-label extra-small fw-bold mb-1">Department</label>
+                                    <input type="text" class="form-control form-control-sm rounded-pill" value="Civil Engineering">
+                                </div>
+                                <div class="row g-1">
+                                    <div class="col-6">
+                                        <input type="text" class="form-control form-control-sm rounded-pill extra-small" placeholder="Twitter URL" value="@ismail_nuesa">
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="text" class="form-control form-control-sm rounded-pill extra-small" placeholder="LinkedIn URL" value="linkedin.com/in/ismail">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Exco 2: Vice President -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="p-3 border rounded-4 bg-light h-100 position-relative">
+                                <button class="btn btn-sm btn-light text-danger rounded-circle position-absolute top-0 end-0 m-2 border shadow-sm" style="z-index: 5;" onclick="if(confirm('Remove this Exco member from executive council list?')) $(this).closest('.col-md-6').remove();" title="Remove Exco Member"><i class="fa fa-trash"></i></button>
+                                <div class="d-flex align-items-center gap-3 mb-3">
+                                    <div class="position-relative">
+                                        <img src="../img/team-2.jpg" alt="Vice President" class="rounded-circle" style="width: 65px; height: 65px; object-fit: cover; border: 2px solid #008751;">
+                                        <button class="btn btn-sm btn-light rounded-circle shadow position-absolute bottom-0 end-0 p-1 border" title="Change Photo" onclick="$(this).next('input[type=file]').click()" style="width: 24px; height: 24px; line-height: 1;">
+                                            <i class="fa fa-camera text-success extra-small" style="font-size: 10px;"></i>
+                                        </button>
+                                        <input type="file" class="d-none" accept="image/*">
+                                    </div>
+                                    <div>
+                                        <span class="badge bg-secondary-subtle text-secondary rounded-pill px-2 py-1 extra-small fw-bold mb-1">Exco 2</span>
+                                        <div class="fw-bold text-dark small">Comr. Fatima Ibrahim</div>
+                                        <div class="text-muted extra-small">Electrical & Electronics</div>
+                                    </div>
+                                </div>
+                                <div class="mb-2">
+                                    <label class="form-label extra-small fw-bold mb-1">Full Name</label>
+                                    <input type="text" class="form-control form-control-sm rounded-pill" value="Comr. Fatima Ibrahim">
+                                </div>
+                                <div class="mb-2">
+                                    <label class="form-label extra-small fw-bold mb-1">Office / Position</label>
+                                    <input type="text" class="form-control form-control-sm rounded-pill" value="Vice President">
+                                </div>
+                                <div class="mb-2">
+                                    <label class="form-label extra-small fw-bold mb-1">Department</label>
+                                    <input type="text" class="form-control form-control-sm rounded-pill" value="Electrical & Electronics">
+                                </div>
+                                <div class="row g-1">
+                                    <div class="col-6">
+                                        <input type="text" class="form-control form-control-sm rounded-pill extra-small" placeholder="Twitter URL" value="@fatima_eee">
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="text" class="form-control form-control-sm rounded-pill extra-small" placeholder="LinkedIn URL" value="linkedin.com/in/fatima">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Exco 3: Secretary General -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="p-3 border rounded-4 bg-light h-100 position-relative">
+                                <button class="btn btn-sm btn-light text-danger rounded-circle position-absolute top-0 end-0 m-2 border shadow-sm" style="z-index: 5;" onclick="if(confirm('Remove this Exco member from executive council list?')) $(this).closest('.col-md-6').remove();" title="Remove Exco Member"><i class="fa fa-trash"></i></button>
+                                <div class="d-flex align-items-center gap-3 mb-3">
+                                    <div class="position-relative">
+                                        <img src="../img/team-3.jpg" alt="Secretary General" class="rounded-circle" style="width: 65px; height: 65px; object-fit: cover; border: 2px solid #008751;">
+                                        <button class="btn btn-sm btn-light rounded-circle shadow position-absolute bottom-0 end-0 p-1 border" title="Change Photo" onclick="$(this).next('input[type=file]').click()" style="width: 24px; height: 24px; line-height: 1;">
+                                            <i class="fa fa-camera text-success extra-small" style="font-size: 10px;"></i>
+                                        </button>
+                                        <input type="file" class="d-none" accept="image/*">
+                                    </div>
+                                    <div>
+                                        <span class="badge bg-primary-subtle text-primary rounded-pill px-2 py-1 extra-small fw-bold mb-1">Exco 3</span>
+                                        <div class="fw-bold text-dark small">Comr. Abubakar Ali</div>
+                                        <div class="text-muted extra-small">Mechanical Engineering</div>
+                                    </div>
+                                </div>
+                                <div class="mb-2">
+                                    <label class="form-label extra-small fw-bold mb-1">Full Name</label>
+                                    <input type="text" class="form-control form-control-sm rounded-pill" value="Comr. Abubakar Ali">
+                                </div>
+                                <div class="mb-2">
+                                    <label class="form-label extra-small fw-bold mb-1">Office / Position</label>
+                                    <input type="text" class="form-control form-control-sm rounded-pill" value="Secretary General">
+                                </div>
+                                <div class="mb-2">
+                                    <label class="form-label extra-small fw-bold mb-1">Department</label>
+                                    <input type="text" class="form-control form-control-sm rounded-pill" value="Mechanical Engineering">
+                                </div>
+                                <div class="row g-1">
+                                    <div class="col-6">
+                                        <input type="text" class="form-control form-control-sm rounded-pill extra-small" placeholder="Twitter URL" value="@secgen_abubakar">
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="text" class="form-control form-control-sm rounded-pill extra-small" placeholder="LinkedIn URL" value="linkedin.com/in/abubakar">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Exco 4: Financial Secretary -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="p-3 border rounded-4 bg-light h-100 position-relative">
+                                <button class="btn btn-sm btn-light text-danger rounded-circle position-absolute top-0 end-0 m-2 border shadow-sm" style="z-index: 5;" onclick="if(confirm('Remove this Exco member from executive council list?')) $(this).closest('.col-md-6').remove();" title="Remove Exco Member"><i class="fa fa-trash"></i></button>
+                                <div class="d-flex align-items-center gap-3 mb-3">
+                                    <div class="position-relative">
+                                        <img src="../img/team-2.jpg" alt="Financial Secretary" class="rounded-circle" style="width: 65px; height: 65px; object-fit: cover; border: 2px solid #008751;">
+                                        <button class="btn btn-sm btn-light rounded-circle shadow position-absolute bottom-0 end-0 p-1 border" title="Change Photo" onclick="$(this).next('input[type=file]').click()" style="width: 24px; height: 24px; line-height: 1;">
+                                            <i class="fa fa-camera text-success extra-small" style="font-size: 10px;"></i>
+                                        </button>
+                                        <input type="file" class="d-none" accept="image/*">
+                                    </div>
+                                    <div>
+                                        <span class="badge bg-success-subtle text-success rounded-pill px-2 py-1 extra-small fw-bold mb-1">Exco 4</span>
+                                        <div class="fw-bold text-dark small">Comr. Zainab Hassan</div>
+                                        <div class="text-muted extra-small">Computer Engineering</div>
+                                    </div>
+                                </div>
+                                <div class="mb-2">
+                                    <label class="form-label extra-small fw-bold mb-1">Full Name</label>
+                                    <input type="text" class="form-control form-control-sm rounded-pill" value="Comr. Zainab Hassan">
+                                </div>
+                                <div class="mb-2">
+                                    <label class="form-label extra-small fw-bold mb-1">Office / Position</label>
+                                    <input type="text" class="form-control form-control-sm rounded-pill" value="Financial Secretary">
+                                </div>
+                                <div class="mb-2">
+                                    <label class="form-label extra-small fw-bold mb-1">Department</label>
+                                    <input type="text" class="form-control form-control-sm rounded-pill" value="Computer Engineering">
+                                </div>
+                                <div class="row g-1">
+                                    <div class="col-6">
+                                        <input type="text" class="form-control form-control-sm rounded-pill extra-small" placeholder="Twitter URL" value="@finsec_zainab">
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="text" class="form-control form-control-sm rounded-pill extra-small" placeholder="LinkedIn URL" value="linkedin.com/in/zainab">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Exco 5: Public Relations Officer (PRO) -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="p-3 border rounded-4 bg-light h-100 position-relative">
+                                <button class="btn btn-sm btn-light text-danger rounded-circle position-absolute top-0 end-0 m-2 border shadow-sm" style="z-index: 5;" onclick="if(confirm('Remove this Exco member from executive council list?')) $(this).closest('.col-md-6').remove();" title="Remove Exco Member"><i class="fa fa-trash"></i></button>
+                                <div class="d-flex align-items-center gap-3 mb-3">
+                                    <div class="position-relative">
+                                        <img src="../img/team-1.jpg" alt="Public Relations Officer" class="rounded-circle" style="width: 65px; height: 65px; object-fit: cover; border: 2px solid #008751;">
+                                        <button class="btn btn-sm btn-light rounded-circle shadow position-absolute bottom-0 end-0 p-1 border" title="Change Photo" onclick="$(this).next('input[type=file]').click()" style="width: 24px; height: 24px; line-height: 1;">
+                                            <i class="fa fa-camera text-success extra-small" style="font-size: 10px;"></i>
+                                        </button>
+                                        <input type="file" class="d-none" accept="image/*">
+                                    </div>
+                                    <div>
+                                        <span class="badge bg-warning-subtle text-warning rounded-pill px-2 py-1 extra-small fw-bold mb-1">Exco 5</span>
+                                        <div class="fw-bold text-dark small">Comr. Usman Kyari</div>
+                                        <div class="text-muted extra-small">Agricultural & Env.</div>
+                                    </div>
+                                </div>
+                                <div class="mb-2">
+                                    <label class="form-label extra-small fw-bold mb-1">Full Name</label>
+                                    <input type="text" class="form-control form-control-sm rounded-pill" value="Comr. Usman Kyari">
+                                </div>
+                                <div class="mb-2">
+                                    <label class="form-label extra-small fw-bold mb-1">Office / Position</label>
+                                    <input type="text" class="form-control form-control-sm rounded-pill" value="Public Relations Officer">
+                                </div>
+                                <div class="mb-2">
+                                    <label class="form-label extra-small fw-bold mb-1">Department</label>
+                                    <input type="text" class="form-control form-control-sm rounded-pill" value="Agricultural & Env.">
+                                </div>
+                                <div class="row g-1">
+                                    <div class="col-6">
+                                        <input type="text" class="form-control form-control-sm rounded-pill extra-small" placeholder="Twitter URL" value="@pro_usman">
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="text" class="form-control form-control-sm rounded-pill extra-small" placeholder="LinkedIn URL" value="linkedin.com/in/usman">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Exco 6: Director of Socials -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="p-3 border rounded-4 bg-light h-100 position-relative">
+                                <button class="btn btn-sm btn-light text-danger rounded-circle position-absolute top-0 end-0 m-2 border shadow-sm" style="z-index: 5;" onclick="if(confirm('Remove this Exco member from executive council list?')) $(this).closest('.col-md-6').remove();" title="Remove Exco Member"><i class="fa fa-trash"></i></button>
+                                <div class="d-flex align-items-center gap-3 mb-3">
+                                    <div class="position-relative">
+                                        <img src="../img/team-3.jpg" alt="Director of Socials" class="rounded-circle" style="width: 65px; height: 65px; object-fit: cover; border: 2px solid #008751;">
+                                        <button class="btn btn-sm btn-light rounded-circle shadow position-absolute bottom-0 end-0 p-1 border" title="Change Photo" onclick="$(this).next('input[type=file]').click()" style="width: 24px; height: 24px; line-height: 1;">
+                                            <i class="fa fa-camera text-success extra-small" style="font-size: 10px;"></i>
+                                        </button>
+                                        <input type="file" class="d-none" accept="image/*">
+                                    </div>
+                                    <div>
+                                        <span class="badge bg-info-subtle text-info rounded-pill px-2 py-1 extra-small fw-bold mb-1">Exco 6</span>
+                                        <div class="fw-bold text-dark small">Comr. Idris Mustapha</div>
+                                        <div class="text-muted extra-small">Chemical Engineering</div>
+                                    </div>
+                                </div>
+                                <div class="mb-2">
+                                    <label class="form-label extra-small fw-bold mb-1">Full Name</label>
+                                    <input type="text" class="form-control form-control-sm rounded-pill" value="Comr. Idris Mustapha">
+                                </div>
+                                <div class="mb-2">
+                                    <label class="form-label extra-small fw-bold mb-1">Office / Position</label>
+                                    <input type="text" class="form-control form-control-sm rounded-pill" value="Director of Socials">
+                                </div>
+                                <div class="mb-2">
+                                    <label class="form-label extra-small fw-bold mb-1">Department</label>
+                                    <input type="text" class="form-control form-control-sm rounded-pill" value="Chemical Engineering">
+                                </div>
+                                <div class="row g-1">
+                                    <div class="col-6">
+                                        <input type="text" class="form-control form-control-sm rounded-pill extra-small" placeholder="Twitter URL" value="@dos_idris">
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="text" class="form-control form-control-sm rounded-pill extra-small" placeholder="LinkedIn URL" value="linkedin.com/in/idris">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION 3: ABOUT NUESA & MISSION STATEMENT -->
+                <div class="dash-card p-4 p-md-5 mb-4">
+                    <h5 class="fw-bold text-dark mb-3 border-bottom pb-2"><i class="fa fa-info-circle text-warning me-2"></i>About NUESA UNIMAID & Core Objectives</h5>
+
+                    <div class="row g-4">
+                        <div class="col-12">
+                            <label class="form-label fw-bold text-dark small">About NUESA Overview</label>
+                            <div class="input-group profile-input-group">
+                                <span class="input-group-text"><span class="material-symbols-outlined">menu_book</span></span>
+                                <textarea class="form-control" rows="4">The National Association of Engineering Students (NUESA), University of Maiduguri Chapter, represents over 3,000 undergraduate and postgraduate engineering scholars across 8 accredited departments. NUESA serves as the unified voice for student advocacy, professional development, and technological empowerment.</textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold text-dark small">Mission Statement</label>
+                            <div class="input-group profile-input-group">
+                                <span class="input-group-text"><span class="material-symbols-outlined">flag</span></span>
+                                <textarea class="form-control" rows="4">Empower students through technical mentorship, academic past questions, and career placement support.</textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold text-dark small">Vision Statement</label>
+                            <div class="input-group profile-input-group">
+                                <span class="input-group-text"><span class="material-symbols-outlined">visibility</span></span>
+                                <textarea class="form-control" rows="4">To produce industry-ready engineering graduates capable of solving complex national challenges.</textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BOTTOM SAVE BUTTON ACTION BAR -->
+                <div class="dash-card p-4 mb-4 text-end">
+                    <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+                        <div class="text-start">
+                            <div class="fw-bold text-dark"><i class="fa fa-info-circle text-success me-2"></i>Save Configuration</div>
+                            <div class="text-muted extra-small">Clicking Save will update the public about page live immediately.</div>
+                        </div>
+                        <button class="btn btn-success rounded-pill px-5 py-3 fw-bold shadow d-inline-flex align-items-center" onclick="saveAboutChanges()" style="background: linear-gradient(135deg, #008751 0%, #006038 100%); border: none;">
+                            <i class="fa fa-save me-2 fs-5"></i>Save Page Content
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- DASHBOARD FOOTER -->
+            <footer class="mt-auto py-3 px-4 bg-white border-top text-center text-muted small">
+                Copyright &copy; NUESA UNIMAID Executive Control • Faculty of Engineering, University of Maiduguri.
+            </footer>
+        </main>
+    </div>
+
+    <!-- ADD EXCO MEMBER MODAL -->
+    <div class="modal fade" id="addExcoModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-4 border-0 shadow-lg">
+                <div class="modal-header border-bottom">
+                    <h5 class="modal-title fw-bold text-dark"><i class="fa fa-user-plus text-success me-2"></i>Add Exco Member</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form onsubmit="event.preventDefault(); addNewExcoMember();">
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold">Full Name & Rank</label>
+                            <div class="input-group profile-input-group">
+                                <span class="input-group-text"><span class="material-symbols-outlined">person</span></span>
+                                <input type="text" class="form-control" id="excoName" placeholder="e.g. Comr. Ahmad Ibrahim" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold">Executive Office / Position</label>
+                            <div class="input-group profile-input-group">
+                                <span class="input-group-text"><span class="material-symbols-outlined">badge</span></span>
+                                <input type="text" class="form-control" id="excoRole" placeholder="e.g. Assistant Secretary General" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold">Department</label>
+                            <div class="input-group profile-input-group">
+                                <span class="input-group-text"><span class="material-symbols-outlined">school</span></span>
+                                <select class="form-select" id="excoDept" required>
+                                    <option value="Civil Engineering">Civil Engineering</option>
+                                    <option value="Electrical & Electronics">Electrical & Electronics</option>
+                                    <option value="Mechanical Engineering">Mechanical Engineering</option>
+                                    <option value="Computer Engineering">Computer Engineering</option>
+                                    <option value="Chemical Engineering">Chemical Engineering</option>
+                                    <option value="Agricultural & Environmental">Agricultural & Environmental</option>
+                                    <option value="Food Science & Tech">Food Science & Tech</option>
+                                    <option value="Industrial & Production">Industrial & Production</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row g-3 mb-3">
+                            <div class="col-6">
+                                <label class="form-label small fw-bold">Twitter Handle</label>
+                                <div class="input-group profile-input-group">
+                                    <span class="input-group-text"><span class="material-symbols-outlined">link</span></span>
+                                    <input type="text" class="form-control" id="excoTwitter" placeholder="@handle">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label small fw-bold">LinkedIn URL</label>
+                                <div class="input-group profile-input-group">
+                                    <span class="input-group-text"><span class="material-symbols-outlined">link</span></span>
+                                    <input type="text" class="form-control" id="excoLinkedin" placeholder="linkedin.com/in/user">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold">Executive Officer Photo</label>
+                            <div class="input-group profile-input-group">
+                                <span class="input-group-text"><span class="material-symbols-outlined">account_box</span></span>
+                                <input type="file" class="form-control" accept="image/*">
+                            </div>
+                        </div>
+                        <div class="d-grid mt-4">
+                            <button type="submit" class="btn btn-success rounded-pill fw-bold py-3" style="background: linear-gradient(135deg, #008751 0%, #006038 100%); border: none;">
+                                Add Executive Officer
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function toggleSidebar() {
+            if ($(window).width() >= 992) {
+                $('#appSidebar').toggleClass('collapsed');
+                if ($('#appSidebar').hasClass('collapsed')) {
+                    $('#collapseArrowIcon').removeClass('fa-chevron-left').addClass('fa-chevron-right');
+                    $('#topbarCollapseBtn').attr('title', 'Expand Sidebar');
+                } else {
+                    $('#collapseArrowIcon').removeClass('fa-chevron-right').addClass('fa-chevron-left');
+                    $('#topbarCollapseBtn').attr('title', 'Collapse Sidebar');
+                }
+            } else {
+                $('#appSidebar').toggleClass('show');
+                $('#sidebarBackdrop').toggleClass('show');
+            }
+        }
+
+        function saveAboutChanges() {
+            $('#aboutAlertText').text('Home & About Us content saved successfully! Live portal and main website are synchronized.');
+            $('#aboutAlert').removeClass('d-none');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function addNewExcoMember() {
+            const name = $('#excoName').val();
+            const role = $('#excoRole').val();
+            const dept = $('#excoDept').val();
+            const twitter = $('#excoTwitter').val() || '@nuesa_unimaid';
+            const linkedin = $('#excoLinkedin').val() || 'linkedin.com/company/nuesa';
+            const count = $('#excoGrid .col-md-6').length + 1;
+
+            const card = `
+                <div class="col-md-6 col-lg-4">
+                    <div class="p-3 border rounded-4 bg-light h-100 position-relative">
+                        <button class="btn btn-sm btn-light text-danger rounded-circle position-absolute top-0 end-0 m-2 border shadow-sm" style="z-index: 5;" onclick="if(confirm('Remove this Exco member?')) $(this).closest('.col-md-6').remove();" title="Remove Exco Member"><i class="fa fa-trash"></i></button>
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="position-relative">
+                                <img src="../img/team-1.jpg" alt="${role}" class="rounded-circle" style="width: 65px; height: 65px; object-fit: cover; border: 2px solid #008751;">
+                                <button class="btn btn-sm btn-light rounded-circle shadow position-absolute bottom-0 end-0 p-1 border" title="Change Photo" onclick="$(this).next('input[type=file]').click()" style="width: 24px; height: 24px; line-height: 1;">
+                                    <i class="fa fa-camera text-success extra-small" style="font-size: 10px;"></i>
+                                </button>
+                                <input type="file" class="d-none" accept="image/*">
+                            </div>
+                            <div>
+                                <span class="badge bg-success-subtle text-success rounded-pill px-2 py-1 extra-small fw-bold mb-1">Exco ${count}</span>
+                                <div class="fw-bold text-dark small">${name}</div>
+                                <div class="text-muted extra-small">${dept}</div>
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label extra-small fw-bold mb-1">Full Name</label>
+                            <input type="text" class="form-control form-control-sm rounded-pill" value="${name}">
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label extra-small fw-bold mb-1">Office / Position</label>
+                            <input type="text" class="form-control form-control-sm rounded-pill" value="${role}">
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label extra-small fw-bold mb-1">Department</label>
+                            <input type="text" class="form-control form-control-sm rounded-pill" value="${dept}">
+                        </div>
+                        <div class="row g-1">
+                            <div class="col-6">
+                                <input type="text" class="form-control form-control-sm rounded-pill extra-small" placeholder="Twitter URL" value="${twitter}">
+                            </div>
+                            <div class="col-6">
+                                <input type="text" class="form-control form-control-sm rounded-pill extra-small" placeholder="LinkedIn URL" value="${linkedin}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            $('#excoGrid').append(card);
+            $('#addExcoModal').modal('hide');
+            $('#aboutAlertText').text('New Exco member "' + name + '" added to 2025/2026 council grid!');
+            $('#aboutAlert').removeClass('d-none');
+        }
+    </script>
+</body>
+
+</html>

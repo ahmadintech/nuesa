@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>NUESA Admin Portal - News & Announcements Control</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="NUESA UNIMAID News & Announcements Manager" name="description">
+
+    <!-- Favicon -->
+    <link href="../img/logos/NUESA logo.jpeg" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Rubik:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Dashboard Stylesheet -->
+    <link href="../css/dashboard.css" rel="stylesheet">
+
+    <style>
+        .admin-badge {
+            background: linear-gradient(135deg, #008751 0%, #004d2e 100%);
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        /* Profile Style Input Group Formatting */
+        .profile-input-group .input-group-text {
+            background-color: #f8f9fa !important;
+            border-color: #e2e8f0 !important;
+            color: #64748b !important;
+            border-top-left-radius: 14px !important;
+            border-bottom-left-radius: 14px !important;
+        }
+
+        .profile-input-group .form-control,
+        .profile-input-group .form-select {
+            background-color: #f8f9fa !important;
+            border-color: #e2e8f0 !important;
+            border-top-right-radius: 14px !important;
+            border-bottom-right-radius: 14px !important;
+            padding: 12px 16px;
+            font-size: 0.95rem;
+            color: #1e293b;
+        }
+
+        .profile-input-group .form-control:focus,
+        .profile-input-group .form-select:focus {
+            background-color: #ffffff !important;
+            border-color: #008751 !important;
+            box-shadow: 0 0 0 4px rgba(0, 135, 81, 0.1) !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Mobile Drawer Backdrop -->
+    <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
+
+    <div class="app-wrapper">
+
+        <!-- 1. LIGHT ADMIN SIDEBAR -->
+        <aside class="app-sidebar" id="appSidebar">
+            <div>
+                <div class="sidebar-header">
+                    <a href="index.html" class="d-flex align-items-center text-decoration-none">
+                        <img src="../img/logos/NUESA logo.jpeg" alt="NUESA UNIMAID Admin" class="rounded-circle me-2" style="width: 40px; height: 40px; object-fit: cover; border: 2px solid #008751;">
+                        <div class="brand-text">
+                            <div class="fw-bold text-dark leading-none" style="letter-spacing: -0.3px;">NUESA ADMIN</div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="sidebar-menu">
+                    <div class="menu-category">Command Center</div>
+                    <a href="index.html" class="sidebar-link" title="Admin Overview">
+                        <span class="material-symbols-outlined">dashboard</span>
+                        <span class="sidebar-text">Overview</span>
+                    </a>
+                    <a href="users.html" class="sidebar-link" title="Students Directory & Control">
+                        <span class="material-symbols-outlined">manage_accounts</span>
+                        <span class="sidebar-text">Students</span>
+                    </a>
+
+                    <div class="menu-category">Governance & Financials</div>
+                    <a href="payments.html" class="sidebar-link" title="Payments & Dues Control">
+                        <span class="material-symbols-outlined">payments</span>
+                        <span class="sidebar-text">Payments</span>
+                    </a>
+                    <a href="elections.html" class="sidebar-link" title="Elections Control Panel">
+                        <span class="material-symbols-outlined">how_to_vote</span>
+                        <span class="sidebar-text">Elections</span>
+                    </a>
+                    <a href="posts.html" class="sidebar-link active" title="News & Announcements">
+                        <span class="material-symbols-outlined">newspaper</span>
+                        <span class="sidebar-text">News</span>
+                    </a>
+
+                    <div class="menu-category">Content & Media</div>
+                    <a href="about.html" class="sidebar-link" title="Home & About Us Manager">
+                        <span class="material-symbols-outlined">info</span>
+                        <span class="sidebar-text">About Us</span>
+                    </a>
+                    <a href="gallery.html" class="sidebar-link" title="Faculty Gallery & Events">
+                        <span class="material-symbols-outlined">photo_library</span>
+                        <span class="sidebar-text">Gallery</span>
+                    </a>
+                    <a href="resources.html" class="sidebar-link" title="Academic Resources & Downloads">
+                        <span class="material-symbols-outlined">folder_zip</span>
+                        <span class="sidebar-text">Resources</span>
+                    </a>
+                    <a href="staff.html" class="sidebar-link" title="Staff Directory">
+                        <span class="material-symbols-outlined">badge</span>
+                        <span class="sidebar-text">Staff Directory</span>
+                    </a>
+
+                    <div class="menu-category">System Configuration</div>
+                    <a href="settings.html" class="sidebar-link" title="Settings">
+                        <span class="material-symbols-outlined">settings</span>
+                        <span class="sidebar-text">Settings</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <a href="../dashboard/index.html" class="sidebar-link mb-2 text-success" title="Student Dashboard">
+                    <span class="material-symbols-outlined">school</span>
+                    <span class="sidebar-text">Student Portal</span>
+                </a>
+                <a href="../login.html" class="sidebar-link text-danger mb-0" title="Logout Admin">
+                    <span class="material-symbols-outlined">logout</span>
+                    <span class="sidebar-text">Logout Executive</span>
+                </a>
+            </div>
+        </aside>
+
+
+        <!-- 2. MAIN WORKSPACE AREA -->
+        <main class="app-main">
+
+            <!-- APP TOPBAR HEADER -->
+            <header class="app-topbar">
+                <div class="d-flex align-items-center flex-grow-1 me-3">
+                    <button class="btn btn-light me-3 rounded-circle p-2 shadow-sm border d-none d-lg-flex align-items-center justify-content-center" id="topbarCollapseBtn" onclick="toggleSidebar()" title="Collapse Sidebar" style="width: 42px; height: 42px;">
+                        <i class="fa fa-chevron-left text-muted fs-6" id="collapseArrowIcon"></i>
+                    </button>
+
+                    <button class="btn btn-light me-3 d-lg-none rounded-circle p-2 shadow-sm border" onclick="toggleSidebar()" title="Toggle Menu" style="width: 42px; height: 42px;">
+                        <i class="fa fa-bars text-dark fs-5"></i>
+                    </button>
+
+                    <div class="topbar-search d-none d-md-block flex-grow-1">
+                        <span class="material-symbols-outlined search-icon">search</span>
+                        <input type="text" class="form-control" placeholder="Search news, announcements, author bulletins...">
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center gap-3">
+                    <!-- Notification Bell Dropdown -->
+                    <div class="dropdown">
+                        <button class="btn btn-light rounded-circle p-2 shadow-sm border position-relative" data-bs-toggle="dropdown" title="Notifications" style="width: 42px; height: 42px;">
+                            <span class="material-symbols-outlined text-dark">notifications</span>
+                            <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle">
+                                <span class="visually-hidden">New alerts</span>
+                            </span>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end shadow-lg border-0 rounded-4 p-3 mt-2" style="width: 320px;">
+                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                <h6 class="fw-bold text-dark mb-0">Executive Alerts</h6>
+                                <span class="badge bg-success-subtle text-success rounded-pill">3 New</span>
+                            </div>
+                            <div class="mb-2 p-2 bg-light rounded-3">
+                                <div class="fw-bold text-dark extra-small">New Dues Payment</div>
+                                <div class="text-muted extra-small">Receipt #NUESA-2025-984 generated for Ismail Yusuf.</div>
+                            </div>
+                            <div class="mb-2 p-2 bg-light rounded-3">
+                                <div class="fw-bold text-dark extra-small">Candidate Application</div>
+                                <div class="text-muted extra-small">New presidential filing from Computer Eng.</div>
+                            </div>
+                            <div class="p-2 bg-light rounded-3">
+                                <div class="fw-bold text-dark extra-small">Verification Audit</div>
+                                <div class="text-muted extra-small">14 student profiles awaiting clearance review.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Admin Profile Dropdown -->
+                    <div class="dropdown">
+                        <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle p-1 rounded-pill bg-light border shadow-sm" data-bs-toggle="dropdown">
+                            <img src="../img/team-1.jpg" alt="Admin Executive" class="rounded-circle me-2" style="width: 36px; height: 36px; object-fit: cover; border: 2px solid #008751;">
+                            <div class="text-start d-none d-md-block me-2">
+                                <div class="fw-bold text-dark leading-none small">Engr. Admin Yusuf</div>
+                                <div class="text-muted extra-small" style="font-size: 10px;">Executive Admin</div>
+                            </div>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end shadow-lg border-0 rounded-4 p-2 mt-2" style="min-width: 220px;">
+                            <div class="p-3 bg-light rounded-3 mb-2">
+                                <div class="fw-bold text-dark">Engr. Admin Yusuf</div>
+                                <div class="extra-small text-muted">admin@nuesa-unimaid.edu.ng</div>
+                                <span class="badge bg-success-subtle text-success rounded-pill px-2 py-1 mt-1 extra-small">Executive Credentials</span>
+                            </div>
+                            <a href="settings.html" class="dropdown-item rounded-2 py-2"><i class="fa fa-user-cog text-primary me-2"></i>Admin Settings</a>
+                            <a href="../dashboard/index.html" class="dropdown-item rounded-2 py-2"><i class="fa fa-school text-success me-2"></i>Switch to Student Portal</a>
+                            <hr class="dropdown-divider">
+                            <a href="../login.html" class="dropdown-item rounded-2 py-2 text-danger"><i class="fa fa-sign-out-alt me-2"></i>Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+
+            <!-- WORKSPACE CONTENT -->
+            <div class="app-content">
+
+                <!-- Header Banner -->
+                <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between mb-4 gap-3">
+                    <div>
+                        <h3 class="fw-bold text-dark mb-1">News</h3>
+                        <p class="text-muted small mb-0">Publish official announcements, academic notices, event schedules, and engineering news.</p>
+                    </div>
+                    <div>
+                        <a href="create-post.html" class="btn btn-success rounded-pill px-4 py-2 fw-bold shadow-sm d-inline-flex align-items-center btn-sm text-nowrap" style="background: linear-gradient(135deg, #008751 0%, #006038 100%); border: none;">
+                            <i class="fa fa-plus-circle me-2"></i>Create New Post
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Posts List Table -->
+                <div class="dash-card p-4">
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle">
+                            <thead class="table-light extra-small text-uppercase">
+                                <tr>
+                                    <th>Post Title</th>
+                                    <th>Category</th>
+                                    <th>Author</th>
+                                    <th>Date Published</th>
+                                    <th>Status</th>
+                                    <th class="text-end">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="adminPostsTableBody">
+                                <tr>
+                                    <td>
+                                        <div class="fw-bold text-dark small">NUESA UNIMAID General Elections Accreditation & Guidelines</div>
+                                        <div class="text-muted extra-small">Official voting rules and matric validation steps...</div>
+                                    </td>
+                                    <td><span class="badge bg-primary-subtle text-primary rounded-pill">Elections</span></td>
+                                    <td class="small">EXCO PRO</td>
+                                    <td class="small text-muted">22 Aug 2026</td>
+                                    <td><span class="badge bg-success-subtle text-success rounded-pill">PUBLISHED</span></td>
+                                    <td class="text-end">
+                                        <a href="create-post.html" class="btn btn-light btn-sm rounded-circle text-primary me-1" title="Edit Post"><i class="fa fa-edit"></i></a>
+                                        <button class="btn btn-light btn-sm rounded-circle text-danger" onclick="if(confirm('Delete this post?')) $(this).closest('tr').remove();"><i class="fa fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="fw-bold text-dark small">Faculty SIWES Logbook Verification Notice</div>
+                                        <div class="text-muted extra-small">Requirements for 400L SIWES defence and supervisor submission...</div>
+                                    </td>
+                                    <td><span class="badge bg-warning-subtle text-warning rounded-pill">SIWES / Industrial</span></td>
+                                    <td class="small">SIWES Director</td>
+                                    <td class="small text-muted">20 Aug 2026</td>
+                                    <td><span class="badge bg-success-subtle text-success rounded-pill">PUBLISHED</span></td>
+                                    <td class="text-end">
+                                        <a href="create-post.html" class="btn btn-light btn-sm rounded-circle text-primary me-1" title="Edit Post"><i class="fa fa-edit"></i></a>
+                                        <button class="btn btn-light btn-sm rounded-circle text-danger" onclick="if(confirm('Delete this post?')) $(this).closest('tr').remove();"><i class="fa fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="fw-bold text-dark small">Engineering Innovation Summit & Wi-Fi Hub Launch</div>
+                                        <div class="text-muted extra-small">Unveiling high-speed Wi-Fi hubs at the engineering block...</div>
+                                    </td>
+                                    <td><span class="badge bg-info-subtle text-info rounded-pill">Events</span></td>
+                                    <td class="small">Tech Director</td>
+                                    <td class="small text-muted">18 Aug 2026</td>
+                                    <td><span class="badge bg-secondary-subtle text-secondary rounded-pill">DRAFT</span></td>
+                                    <td class="text-end">
+                                        <a href="create-post.html" class="btn btn-light btn-sm rounded-circle text-primary me-1" title="Edit Post"><i class="fa fa-edit"></i></a>
+                                        <button class="btn btn-light btn-sm rounded-circle text-danger" onclick="if(confirm('Delete this post?')) $(this).closest('tr').remove();"><i class="fa fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- DASHBOARD FOOTER -->
+            <footer class="mt-auto py-3 px-4 bg-white border-top text-center text-muted small">
+                Copyright &copy; NUESA UNIMAID Executive Control • Faculty of Engineering, University of Maiduguri.
+            </footer>
+        </main>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function toggleSidebar() {
+            if ($(window).width() >= 992) {
+                $('#appSidebar').toggleClass('collapsed');
+                if ($('#appSidebar').hasClass('collapsed')) {
+                    $('#collapseArrowIcon').removeClass('fa-chevron-left').addClass('fa-chevron-right');
+                    $('#topbarCollapseBtn').attr('title', 'Expand Sidebar');
+                } else {
+                    $('#collapseArrowIcon').removeClass('fa-chevron-right').addClass('fa-chevron-left');
+                    $('#topbarCollapseBtn').attr('title', 'Collapse Sidebar');
+                }
+            } else {
+                $('#appSidebar').toggleClass('show');
+                $('#sidebarBackdrop').toggleClass('show');
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,475 @@
+/* NUESA UNIMAID Student Portal Dashboard Styles */
+
+body {
+    background-color: #f4f6f9 !important;
+    font-family: 'Open Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: 'Rubik', sans-serif;
+}
+
+/* App Layout Shell */
+.app-wrapper {
+    display: flex;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+/* LIGHT SIDEBAR STYLING */
+.app-sidebar {
+    width: 270px;
+    background: #ffffff;
+    color: #212529;
+    border-right: 1px solid #e9ecef;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1040;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Desktop Collapsed Sidebar State (80px Icon Bar) */
+.app-sidebar.collapsed {
+    width: 80px;
+}
+
+.app-sidebar.collapsed .sidebar-text,
+.app-sidebar.collapsed .menu-category,
+.app-sidebar.collapsed .brand-text {
+    display: none !important;
+}
+
+.app-sidebar.collapsed .sidebar-header {
+    padding: 20px 10px;
+    justify-content: center !important;
+}
+
+.app-sidebar.collapsed .sidebar-link {
+    justify-content: center;
+    padding: 14px 0;
+}
+
+.app-sidebar.collapsed .sidebar-link .material-symbols-outlined {
+    margin-right: 0 !important;
+}
+
+.sidebar-header {
+    padding: 18px 24px;
+    border-bottom: 1px solid #f0f2f5;
+    height: 72px;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-menu {
+    padding: 16px 14px;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.menu-category {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #9ea5b0;
+    font-weight: 700;
+    padding: 14px 14px 6px 14px;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    color: #495057;
+    font-weight: 500;
+    border-radius: 12px;
+    text-decoration: none;
+    margin-bottom: 4px;
+    transition: all 0.2s ease;
+    font-size: 0.95rem;
+}
+
+.sidebar-link:hover {
+    color: #008751;
+    background: #f0fdf4;
+}
+
+.sidebar-link.active {
+    background: linear-gradient(135deg, #008751 0%, #006038 100%);
+    color: #ffffff !important;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0, 135, 81, 0.25);
+}
+
+.sidebar-link .material-symbols-outlined {
+    margin-right: 14px;
+    font-size: 22px;
+}
+
+.sidebar-footer {
+    padding: 16px 18px;
+    border-top: 1px solid #f0f2f5;
+    background: #fafbfc;
+}
+
+/* App Main Content Area */
+.app-main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+/* Dashboard Topbar Header */
+.app-topbar {
+    height: 72px;
+    background: #ffffff;
+    border-bottom: 1px solid #e9ecef;
+    padding: 0 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+/* PROMINENT ENLARGED SEARCH BAR */
+.topbar-search {
+    max-width: 550px;
+    width: 100%;
+    position: relative;
+}
+
+.topbar-search .form-control {
+    border-radius: 50px;
+    background: #f8f9fa;
+    border: 1px solid #e2e8f0;
+    padding-left: 48px;
+    font-size: 0.95rem;
+    height: 46px;
+    transition: all 0.2s ease;
+}
+
+.topbar-search .form-control:focus {
+    background: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 135, 81, 0.12);
+    border-color: #008751;
+}
+
+.topbar-search .search-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d;
+    font-size: 22px;
+}
+
+#topbarCollapseBtn {
+    transition: all 0.2s ease;
+}
+
+#topbarCollapseBtn:hover {
+    background-color: #008751 !important;
+    border-color: #008751 !important;
+}
+
+#topbarCollapseBtn:hover i {
+    color: #ffffff !important;
+}
+
+/* Content Area */
+.app-content {
+    padding: 28px;
+    flex-grow: 1;
+}
+
+/* Cards & Styling */
+.dash-card {
+    border: none;
+    border-radius: 20px;
+    background: #ffffff;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.dash-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+}
+
+.dashboard-hero-bg {
+    background: linear-gradient(135deg, #001d3d 0%, #003566 55%, #008751 100%);
+    border-radius: 24px;
+}
+
+.stat-icon-box {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Digital ID Card Styles */
+.nuesa-id-card {
+    width: 100%;
+    max-width: 400px;
+    background: linear-gradient(145deg, #001d3d 0%, #003566 60%, #008751 100%);
+    border-radius: 24px;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+.nuesa-id-photo {
+    width: 100px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 3px solid #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.badge-dept {
+    background-color: #eb7c13;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.75rem;
+    padding: 4px 12px;
+    border-radius: 50px;
+}
+
+.watermark-seal {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    opacity: 0.08;
+    width: 180px;
+    pointer-events: none;
+}
+
+/* Timeline & Steps */
+.step-progress-item {
+    position: relative;
+    padding-left: 45px;
+    padding-bottom: 22px;
+}
+
+.step-progress-item::before {
+    content: "";
+    position: absolute;
+    left: 17px;
+    top: 36px;
+    bottom: 0;
+    width: 2px;
+    background-color: #e9ecef;
+}
+
+.step-progress-item:last-child::before {
+    display: none;
+}
+
+.step-icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* PROFESSIONAL LETTERHEAD E-RECEIPT STYLING */
+.official-receipt-card {
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #dee2e6;
+    position: relative;
+    padding: 24px;
+}
+
+.receipt-letterhead {
+    border-bottom: 2px solid #008751;
+    padding-bottom: 16px;
+    margin-bottom: 20px;
+}
+
+.receipt-logo-left, .receipt-logo-right {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+}
+
+.receipt-header-title {
+    font-family: 'Rubik', sans-serif;
+    color: #001d3d;
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+}
+
+.receipt-header-sub {
+    font-size: 10px;
+    color: #495057;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.receipt-watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 220px;
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+/* Mobile Drawer BackDrop */
+.sidebar-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
+    z-index: 1035;
+}
+
+.sidebar-backdrop.show {
+    display: block;
+}
+
+@media (max-width: 991.98px) {
+    .app-sidebar {
+        position: fixed;
+        left: -270px;
+        top: 0;
+        bottom: 0;
+        box-shadow: 5px 0 25px rgba(0, 0, 0, 0.15);
+    }
+    .app-sidebar.show {
+        left: 0;
+    }
+    .app-topbar {
+        padding: 0 16px;
+    }
+    .app-content {
+        padding: 16px;
+    }
+    .stat-card-col {
+        width: 50% !important;
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+        padding: 4px !important;
+    }
+}
+
+/* UNIFIED PROFILE-STYLE FORM CONTROLS & INPUT GROUPS */
+.form-label-profile {
+    font-weight: 600 !important;
+    color: #1e293b !important;
+    font-size: 0.9rem !important;
+    display: flex !important;
+    align-items: center !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.profile-input-group .input-group-text,
+.input-group-profile .input-group-text {
+    background-color: #f8f9fa !important;
+    border: 1px solid #e2e8f0 !important;
+    border-right: none !important;
+    color: #64748b !important;
+    border-top-left-radius: 16px !important;
+    border-bottom-left-radius: 16px !important;
+    padding: 12px 16px !important;
+}
+
+.profile-input-group .form-control,
+.profile-input-group .form-select,
+.input-group-profile .form-control,
+.input-group-profile .form-select {
+    background-color: #f8f9fa !important;
+    border: 1px solid #e2e8f0 !important;
+    border-left: none !important;
+    border-top-right-radius: 16px !important;
+    border-bottom-right-radius: 16px !important;
+    padding: 12px 16px !important;
+    font-size: 0.95rem !important;
+    color: #1e293b !important;
+    font-weight: 500 !important;
+}
+
+.profile-input-group .form-control:focus,
+.profile-input-group .form-select:focus,
+.input-group-profile .form-control:focus,
+.input-group-profile .form-select:focus {
+    background-color: #ffffff !important;
+    border-color: #008751 !important;
+    box-shadow: 0 0 0 4px rgba(0, 135, 81, 0.12) !important;
+}
+
+/* Modal Form Controls Parity */
+.modal-content .input-group .input-group-text {
+    background-color: #f8f9fa !important;
+    border: 1px solid #e2e8f0 !important;
+    border-right: none !important;
+    color: #64748b !important;
+    border-top-left-radius: 14px !important;
+    border-bottom-left-radius: 14px !important;
+    padding: 10px 14px !important;
+}
+
+.modal-content .input-group .form-control,
+.modal-content .input-group .form-select {
+    background-color: #f8f9fa !important;
+    border: 1px solid #e2e8f0 !important;
+    border-left: none !important;
+    border-top-right-radius: 14px !important;
+    border-bottom-right-radius: 14px !important;
+    padding: 10px 14px !important;
+    font-size: 0.95rem !important;
+}
+
+.modal-content .form-control:focus,
+.modal-content .form-select:focus {
+    background-color: #ffffff !important;
+    border-color: #008751 !important;
+    box-shadow: 0 0 0 4px rgba(0, 135, 81, 0.12) !important;
+}
+
+.btn-profile-primary {
+    background: linear-gradient(135deg, #008751 0%, #006038 100%) !important;
+    border: none !important;
+    color: #ffffff !important;
+    border-radius: 50rem !important;
+    padding: 12px 28px !important;
+    font-weight: 700 !important;
+    box-shadow: 0 4px 14px rgba(0, 135, 81, 0.25) !important;
+    transition: all 0.2s ease-in-out !important;
+}
+
+.btn-profile-primary:hover {
+    box-shadow: 0 6px 20px rgba(0, 135, 81, 0.35) !important;
+    transform: translateY(-1px) !important;
+}
+

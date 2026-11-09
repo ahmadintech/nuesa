@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>NUESA Admin Portal - Home Page Manager</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Manage NUESA UNIMAID Public Home Page, Hero Carousel, Key Counters, Strategic Pillars, FAQ & Marquee" name="description">
+
+    <!-- Favicon -->
+    <link href="../img/logos/NUESA logo.jpeg" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Rubik:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Dashboard Stylesheet -->
+    <link href="../css/dashboard.css" rel="stylesheet">
+
+    <style>
+        .profile-input-group .input-group-text {
+            background-color: #f8f9fa !important;
+            border-color: #e2e8f0 !important;
+            color: #64748b !important;
+            border-top-left-radius: 14px !important;
+            border-bottom-left-radius: 14px !important;
+        }
+
+        .profile-input-group .form-control,
+        .profile-input-group .form-select {
+            background-color: #f8f9fa !important;
+            border-color: #e2e8f0 !important;
+            border-top-right-radius: 14px !important;
+            border-bottom-right-radius: 14px !important;
+            padding: 12px 16px;
+            font-size: 0.95rem;
+            color: #1e293b;
+        }
+
+        .profile-input-group .form-control:focus,
+        .profile-input-group .form-select:focus {
+            background-color: #ffffff !important;
+            border-color: #008751 !important;
+            box-shadow: 0 0 0 4px rgba(0, 135, 81, 0.1) !important;
+        }
+
+        .hero-banner-preview {
+            height: 220px;
+            border-radius: 16px;
+            background: linear-gradient(rgba(0, 135, 81, 0.85), rgba(15, 23, 42, 0.9)), url('../img/carousel-1.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            text-align: center;
+            padding: 24px;
+        }
+
+        .stat-counter-card {
+            background: linear-gradient(135deg, #008751 0%, #005a34 100%);
+            border-radius: 16px;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Mobile Drawer Backdrop -->
+    <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
+
+    <div class="app-wrapper">
+
+        <!-- 1. LIGHT ADMIN SIDEBAR -->
+        <aside class="app-sidebar" id="appSidebar">
+            <div>
+                <div class="sidebar-header">
+                    <a href="index.html" class="d-flex align-items-center text-decoration-none">
+                        <img src="../img/logos/NUESA logo.jpeg" alt="NUESA UNIMAID Admin" class="rounded-circle me-2" style="width: 40px; height: 40px; object-fit: cover; border: 2px solid #008751;">
+                        <div class="brand-text">
+                            <div class="fw-bold text-dark leading-none" style="letter-spacing: -0.3px;">NUESA ADMIN</div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="sidebar-menu">
+                    <div class="menu-category">Command Center</div>
+                    <a href="index.html" class="sidebar-link" title="Admin Overview">
+                        <span class="material-symbols-outlined">dashboard</span>
+                        <span class="sidebar-text">Overview</span>
+                    </a>
+                    <a href="users.html" class="sidebar-link" title="Students Directory & Control">
+                        <span class="material-symbols-outlined">manage_accounts</span>
+                        <span class="sidebar-text">Students</span>
+                    </a>
+
+                    <div class="menu-category">Governance & Financials</div>
+                    <a href="payments.html" class="sidebar-link" title="Payments & Dues Control">
+                        <span class="material-symbols-outlined">payments</span>
+                        <span class="sidebar-text">Payments</span>
+                    </a>
+                    <a href="elections.html" class="sidebar-link" title="Elections Control Panel">
+                        <span class="material-symbols-outlined">how_to_vote</span>
+                        <span class="sidebar-text">Elections</span>
+                    </a>
+                    <a href="posts.html" class="sidebar-link" title="News & Announcements">
+                        <span class="material-symbols-outlined">newspaper</span>
+                        <span class="sidebar-text">News</span>
+                    </a>
+
+                    <div class="menu-category">Content & Media</div>
+                    <a href="home.html" class="sidebar-link active" title="Public Home Page Manager">
+                        <span class="material-symbols-outlined">home</span>
+                        <span class="sidebar-text">Home Page</span>
+                    </a>
+                    <a href="about.html" class="sidebar-link" title="About Us & Dean Address">
+                        <span class="material-symbols-outlined">info</span>
+                        <span class="sidebar-text">About Us</span>
+                    </a>
+                    <a href="gallery.html" class="sidebar-link" title="Faculty Gallery & Events">
+                        <span class="material-symbols-outlined">photo_library</span>
+                        <span class="sidebar-text">Gallery</span>
+                    </a>
+                    <a href="resources.html" class="sidebar-link" title="Academic Resources & Downloads">
+                        <span class="material-symbols-outlined">folder_zip</span>
+                        <span class="sidebar-text">Resources</span>
+                    </a>
+                    <a href="staff.html" class="sidebar-link" title="Staff Directory">
+                        <span class="material-symbols-outlined">badge</span>
+                        <span class="sidebar-text">Staff Directory</span>
+                    </a>
+
+                    <div class="menu-category">System Configuration</div>
+                    <a href="settings.html" class="sidebar-link" title="Settings">
+                        <span class="material-symbols-outlined">settings</span>
+                        <span class="sidebar-text">Settings</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <a href="../dashboard/index.html" class="sidebar-link mb-2 text-success" title="Student Dashboard">
+                    <span class="material-symbols-outlined">school</span>
+                    <span class="sidebar-text">Student Portal</span>
+                </a>
+                <a href="../login.html" class="sidebar-link text-danger mb-0" title="Logout Admin">
+                    <span class="material-symbols-outlined">logout</span>
+                    <span class="sidebar-text">Logout Executive</span>
+                </a>
+            </div>
+        </aside>
+
+
+        <!-- 2. MAIN WORKSPACE AREA -->
+        <main class="app-main">
+
+            <!-- APP TOPBAR HEADER -->
+            <header class="app-topbar">
+                <div class="d-flex align-items-center flex-grow-1 me-3">
+                    <button class="btn btn-light me-3 rounded-circle p-2 shadow-sm border d-none d-lg-flex align-items-center justify-content-center" id="topbarCollapseBtn" onclick="toggleSidebar()" title="Collapse Sidebar" style="width: 42px; height: 42px;">
+                        <i class="fa fa-chevron-left text-muted fs-6" id="collapseArrowIcon"></i>
+                    </button>
+
+                    <button class="btn btn-light me-3 d-lg-none rounded-circle p-2 shadow-sm border" onclick="toggleSidebar()" title="Toggle Menu" style="width: 42px; height: 42px;">
+                        <i class="fa fa-bars text-dark fs-5"></i>
+                    </button>
+
+                    <div class="topbar-search d-none d-md-block flex-grow-1">
+                        <span class="material-symbols-outlined search-icon">search</span>
+                        <input type="text" class="form-control" placeholder="Search home page sections, hero carousel, stats, FAQ items...">
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center gap-3">
+                    <!-- Notification Bell Dropdown -->
+                    <div class="dropdown">
+                        <button class="btn btn-light rounded-circle p-2 shadow-sm border position-relative" data-bs-toggle="dropdown" title="Notifications" style="width: 42px; height: 42px;">
+                            <span class="material-symbols-outlined text-dark">notifications</span>
+                            <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle">
+                                <span class="visually-hidden">New alerts</span>
+                            </span>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end shadow-lg border-0 rounded-4 p-3 mt-2" style="width: 320px;">
+                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                <h6 class="fw-bold text-dark mb-0">Executive Alerts</h6>
+                                <span class="badge bg-success-subtle text-success rounded-pill">3 New</span>
+                            </div>
+                            <div class="mb-2 p-2 bg-light rounded-3">
+                                <div class="fw-bold text-dark extra-small">New Dues Payment</div>
+                                <div class="text-muted extra-small">Receipt #NUESA-2025-984 generated for Ismail Yusuf.</div>
+                            </div>
+                            <div class="mb-2 p-2 bg-light rounded-3">
+                                <div class="fw-bold text-dark extra-small">Candidate Application</div>
+                                <div class="text-muted extra-small">New presidential filing from Computer Eng.</div>
+                            </div>
+                            <div class="p-2 bg-light rounded-3">
+                                <div class="fw-bold text-dark extra-small">Verification Audit</div>
+                                <div class="text-muted extra-small">14 student profiles awaiting clearance review.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Admin Profile Dropdown -->
+                    <div class="dropdown">
+                        <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle p-1 rounded-pill bg-light border shadow-sm" data-bs-toggle="dropdown">
+                            <img src="../img/team-1.jpg" alt="Admin Executive" class="rounded-circle me-2" style="width: 36px; height: 36px; object-fit: cover; border: 2px solid #008751;">
+                            <div class="text-start d-none d-md-block me-2">
+                                <div class="fw-bold text-dark leading-none small">Engr. Admin Yusuf</div>
+                                <div class="text-muted extra-small" style="font-size: 10px;">Executive Admin</div>
+                            </div>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end shadow-lg border-0 rounded-4 p-2 mt-2" style="min-width: 220px;">
+                            <div class="p-3 bg-light rounded-3 mb-2">
+                                <div class="fw-bold text-dark">Engr. Admin Yusuf</div>
+                                <div class="extra-small text-muted">admin@nuesa-unimaid.edu.ng</div>
+                                <span class="badge bg-success-subtle text-success rounded-pill px-2 py-1 mt-1 extra-small">Executive Credentials</span>
+                            </div>
+                            <a href="settings.html" class="dropdown-item rounded-2 py-2"><i class="fa fa-user-cog text-primary me-2"></i>Admin Settings</a>
+                            <a href="../dashboard/index.html" class="dropdown-item rounded-2 py-2"><i class="fa fa-school text-success me-2"></i>Switch to Student Portal</a>
+                            <hr class="dropdown-divider">
+                            <a href="../login.html" class="dropdown-item rounded-2 py-2 text-danger"><i class="fa fa-sign-out-alt me-2"></i>Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+
+            <!-- WORKSPACE CONTENT -->
+            <div class="app-content">
+
+                <!-- Header Banner -->
+                <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between mb-4 gap-3">
+                    <div>
+                        <h3 class="fw-bold text-dark mb-1">Home Page Manager</h3>
+                        <p class="text-muted small mb-0">Manage hero slides, live statistics, strategic pillars, leadership spotlights, and FAQs.</p>
+                    </div>
+                    <div class="d-flex gap-2">
+                        <a href="../index.html" target="_blank" class="btn btn-outline-success rounded-pill px-3 py-2 fw-bold small d-inline-flex align-items-center">
+                            <i class="fa fa-external-link-alt me-2"></i>View Public Home
+                        </a>
+                        <button class="btn btn-success rounded-pill px-4 py-2 fw-bold shadow-sm d-inline-flex align-items-center text-nowrap" onclick="saveHomeChanges()" style="background: linear-gradient(135deg, #008751 0%, #006038 100%); border: none;">
+                            <i class="fa fa-save me-2"></i>Save Home Changes
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Alert Feedback Box -->
+                <div id="homeAlert" class="alert alert-success alert-dismissible fade show rounded-4 d-none mb-4" role="alert">
+                    <i class="fa fa-check-circle me-2"></i><span id="homeAlertText">Home page content updated successfully! Public website reflects live changes.</span>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+
+                <!-- 1. HERO CAROUSEL SLIDES MANAGER -->
+                <div class="dash-card p-4 p-md-5 mb-4">
+                    <div class="d-flex align-items-center justify-content-between mb-3 border-bottom pb-2">
+                        <h5 class="fw-bold text-dark mb-0"><i class="fa fa-images text-success me-2"></i>Hero Carousel Slides (Main Banner)</h5>
+                        <span class="badge bg-success-subtle text-success rounded-pill px-3 py-1 extra-small fw-bold">2 Active Slides</span>
+                    </div>
+
+                    <!-- Slide 1 Card -->
+                    <div class="border rounded-4 p-4 mb-4 bg-light">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <h6 class="fw-bold text-dark mb-0"><i class="fa fa-layer-group text-primary me-2"></i>Slide 1: Gateway to Engineering Excellence</h6>
+                            <button class="btn btn-sm btn-outline-danger rounded-pill px-3 extra-small" onclick="alert('Slide deletion disabled for primary hero')"><i class="fa fa-trash me-1"></i>Remove</button>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold text-dark small">Badge Tagline</label>
+                                <div class="input-group profile-input-group">
+                                    <span class="input-group-text"><span class="material-symbols-outlined">label</span></span>
+                                    <input type="text" class="form-control" value="Welcome to NUESA UNIMAID">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold text-dark small">Main Slide Title</label>
+                                <div class="input-group profile-input-group">
+                                    <span class="input-group-text"><span class="material-symbols-outlined">title</span></span>
+                                    <input type="text" class="form-control" value="Gateway to Engineering Excellence">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label fw-bold text-dark small">Sub-Headline Text</label>
+                                <div class="input-group profile-input-group">
+                                    <span class="input-group-text"><span class="material-symbols-outlined">notes</span></span>
+                                    <textarea class="form-control" rows="2">Welcome to the official portal of NUESA UNIMAID — driving academic development, student welfare, innovation initiatives, and professional leadership across all engineering departments.</textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold text-dark small">Button 1 Label & Link</label>
+                                <div class="input-group profile-input-group">
+                                    <span class="input-group-text"><span class="material-symbols-outlined">link</span></span>
+                                    <input type="text" class="form-control" value="Explore Resources (resources.html)">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold text-dark small">Button 2 Label & Link</label>
+                                <div class="input-group profile-input-group">
+                                    <span class="input-group-text"><span class="material-symbols-outlined">group_add</span></span>
+                                    <input type="text" class="form-control" value="Join Network (contact.html#portal)">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 Card -->
+                    <div class="border rounded-4 p-4 bg-light">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <h6 class="fw-bold text-dark mb-0"><i class="fa fa-layer-group text-primary me-2"></i>Slide 2: NUESA UNIMAID Chapter</h6>
+                            <button class="btn btn-sm btn-outline-danger rounded-pill px-3 extra-small"><i class="fa fa-trash me-1"></i>Remove</button>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold text-dark small">Badge Tagline</label>
+                                <div class="input-group profile-input-group">
+                                    <span class="input-group-text"><span class="material-symbols-outlined">label</span></span>
+                                    <input type="text" class="form-control" value="Faculty of Engineering">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold text-dark small">Main Slide Title</label>
+                                <div class="input-group profile-input-group">
+                                    <span class="input-group-text"><span class="material-symbols-outlined">title</span></span>
+                                    <input type="text" class="form-control" value="NUESA UNIMAID Chapter">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label fw-bold text-dark small">Sub-Headline Text</label>
+                                <div class="input-group profile-input-group">
+                                    <span class="input-group-text"><span class="material-symbols-outlined">notes</span></span>
+                                    <textarea class="form-control" rows="2">Home of the annual Engineering Week, cultural carnivals, academic seminars, and student entrepreneurship in the Faculty of Engineering, University of Maiduguri.</textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. KEY STATISTICS COUNTER BAR -->
+                <div class="dash-card p-4 p-md-5 mb-4">
+                    <h5 class="fw-bold text-dark mb-3 border-bottom pb-2"><i class="fa fa-calculator text-warning me-2"></i>Key Live Statistics Counters</h5>
+                    <p class="text-muted small mb-4">Configure the numbers displayed on the home page key stat counter banner.</p>
+
+                    <div class="row g-3">
+                        <div class="col-md-3">
+                            <div class="stat-counter-card">
+                                <span class="material-symbols-outlined fs-2 mb-1">groups</span>
+                                <label class="form-label fw-bold text-white small d-block mb-1">Total Students</label>
+                                <input type="text" class="form-control text-center fw-bold fs-5 text-success rounded-pill" value="2500+">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="stat-counter-card">
+                                <span class="material-symbols-outlined fs-2 mb-1">account_tree</span>
+                                <label class="form-label fw-bold text-white small d-block mb-1">Departments</label>
+                                <input type="text" class="form-control text-center fw-bold fs-5 text-success rounded-pill" value="8">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="stat-counter-card">
+                                <span class="material-symbols-outlined fs-2 mb-1">badge</span>
+                                <label class="form-label fw-bold text-white small d-block mb-1">Exec Officers</label>
+                                <input type="text" class="form-control text-center fw-bold fs-5 text-success rounded-pill" value="15">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="stat-counter-card">
+                                <span class="material-symbols-outlined fs-2 mb-1">menu_book</span>
+                                <label class="form-label fw-bold text-white small d-block mb-1">Academic Vault</label>
+                                <input type="text" class="form-control text-center fw-bold fs-5 text-success rounded-pill" value="500+">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. STRATEGIC PILLARS / CORE CHAPTER ACTIVITIES -->
+                <div class="dash-card p-4 p-md-5 mb-4">
+                    <h5 class="fw-bold text-dark mb-3 border-bottom pb-2"><i class="fa fa-cubes text-primary me-2"></i>Core Chapter Activities (3 Pillars)</h5>
+
+                    <div class="row g-4">
+                        <!-- Pillar 1 -->
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-4 bg-light h-100">
+                                <div class="fw-bold text-dark mb-2"><i class="fa fa-graduation-cap text-success me-2"></i>Pillar 1: Academic</div>
+                                <div class="mb-2">
+                                    <label class="form-label extra-small fw-bold">Title</label>
+                                    <input type="text" class="form-control form-control-sm rounded-pill" value="Academic Development">
+                                </div>
+                                <div>
+                                    <label class="form-label extra-small fw-bold">Description</label>
+                                    <textarea class="form-control form-control-sm rounded-3" rows="3">Organizing lectures, academic seminars, textbooks, laboratory equipment support, and past question archives.</textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pillar 2 -->
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-4 bg-light h-100">
+                                <div class="fw-bold text-dark mb-2"><i class="fa fa-calendar-alt text-warning me-2"></i>Pillar 2: Engineering Week</div>
+                                <div class="mb-2">
+                                    <label class="form-label extra-small fw-bold">Title</label>
+                                    <input type="text" class="form-control form-control-sm rounded-pill" value="Engineering Week">
+                                </div>
+                                <div>
+                                    <label class="form-label extra-small fw-bold">Description</label>
+                                    <textarea class="form-control form-control-sm rounded-3" rows="3">Hosting annual cultural carnivals, design competitions, social events, awards, and keynote lectures.</textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pillar 3 -->
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-4 bg-light h-100">
+                                <div class="fw-bold text-dark mb-2"><i class="fa fa-hands-helping text-info me-2"></i>Pillar 3: Welfare</div>
+                                <div class="mb-2">
+                                    <label class="form-label extra-small fw-bold">Title</label>
+                                    <input type="text" class="form-control form-control-sm rounded-pill" value="Welfare & Leadership">
+                                </div>
+                                <div>
+                                    <label class="form-label extra-small fw-bold">Description</label>
+                                    <textarea class="form-control form-control-sm rounded-3" rows="3">Advocating for basic amenities, faculty facilities, community service, and professional mentorship.</textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. LEADERSHIP SPOTLIGHT (FACULTY & CHAPTER LEADERS) -->
+                <div class="dash-card p-4 p-md-5 mb-4">
+                    <h5 class="fw-bold text-dark mb-3 border-bottom pb-2"><i class="fa fa-user-shield text-success me-2"></i>Leadership Spotlight Section</h5>
+
+                    <div class="row g-4">
+                        <!-- Dean -->
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-4 bg-light text-center">
+                                <div class="position-relative d-inline-block mb-2">
+                                    <img src="../img/team-1.jpg" alt="Faculty Dean" class="rounded-circle" style="width: 85px; height: 85px; object-fit: cover; border: 3px solid #008751;">
+                                    <button type="button" class="btn btn-sm btn-light rounded-circle shadow position-absolute bottom-0 end-0 p-1 border" title="Change Dean Photo" onclick="$(this).next('input[type=file]').click()" style="width: 30px; height: 30px; line-height: 1;">
+                                        <i class="fa fa-camera text-success extra-small"></i>
+                                    </button>
+                                    <input type="file" class="d-none" accept="image/*" onchange="alert('Selected new photo for Dean: ' + (this.files[0] ? this.files[0].name : ''))">
+                                </div>
+                                <div class="badge bg-primary rounded-pill mb-2 extra-small d-block mx-auto" style="width: max-content;">Faculty Dean</div>
+                                <button type="button" class="btn btn-sm btn-outline-success rounded-pill px-3 py-1 mb-2 extra-small fw-bold" onclick="$(this).prev().prev().find('input[type=file]').click()">
+                                    <i class="fa fa-image me-1"></i>Change Image
+                                </button>
+                                <input type="text" class="form-control form-control-sm rounded-pill text-center mb-2" value="Prof. B. G. Umara">
+                                <input type="text" class="form-control form-control-sm rounded-pill text-center text-muted extra-small" value="Dean, Faculty of Engineering">
+                            </div>
+                        </div>
+
+                        <!-- President -->
+                        <div class="col-md-4">
+                            <div class="p-3 border border-2 border-success rounded-4 bg-white text-center shadow-sm">
+                                <div class="position-relative d-inline-block mb-2">
+                                    <img src="../img/team-1.jpg" alt="NUESA President" class="rounded-circle" style="width: 90px; height: 90px; object-fit: cover; border: 3px solid #ffc107;">
+                                    <button type="button" class="btn btn-sm btn-light rounded-circle shadow position-absolute bottom-0 end-0 p-1 border" title="Change President Photo" onclick="$(this).next('input[type=file]').click()" style="width: 32px; height: 32px; line-height: 1;">
+                                        <i class="fa fa-camera text-warning extra-small"></i>
+                                    </button>
+                                    <input type="file" class="d-none" accept="image/*" onchange="alert('Selected new photo for NUESA President: ' + (this.files[0] ? this.files[0].name : ''))">
+                                </div>
+                                <div class="badge bg-warning text-dark rounded-pill mb-2 extra-small fw-bold d-block mx-auto" style="width: max-content;">NUESA President</div>
+                                <button type="button" class="btn btn-sm btn-outline-warning text-dark rounded-pill px-3 py-1 mb-2 extra-small fw-bold" onclick="$(this).prev().prev().find('input[type=file]').click()">
+                                    <i class="fa fa-image me-1"></i>Change Image
+                                </button>
+                                <input type="text" class="form-control form-control-sm rounded-pill text-center fw-bold mb-2" value="Comr. Ismail Isah Yusuf">
+                                <input type="text" class="form-control form-control-sm rounded-pill text-center text-muted extra-small" value="NUESA President (UNIMAID Chapter)">
+                            </div>
+                        </div>
+
+                        <!-- Staff Adviser -->
+                        <div class="col-md-4">
+                            <div class="p-3 border rounded-4 bg-light text-center">
+                                <div class="position-relative d-inline-block mb-2">
+                                    <img src="../img/team-2.jpg" alt="Staff Adviser" class="rounded-circle" style="width: 85px; height: 85px; object-fit: cover; border: 3px solid #008751;">
+                                    <button type="button" class="btn btn-sm btn-light rounded-circle shadow position-absolute bottom-0 end-0 p-1 border" title="Change Staff Adviser Photo" onclick="$(this).next('input[type=file]').click()" style="width: 30px; height: 30px; line-height: 1;">
+                                        <i class="fa fa-camera text-success extra-small"></i>
+                                    </button>
+                                    <input type="file" class="d-none" accept="image/*" onchange="alert('Selected new photo for Staff Adviser: ' + (this.files[0] ? this.files[0].name : ''))">
+                                </div>
+                                <div class="badge bg-primary rounded-pill mb-2 extra-small d-block mx-auto" style="width: max-content;">Staff Adviser</div>
+                                <button type="button" class="btn btn-sm btn-outline-success rounded-pill px-3 py-1 mb-2 extra-small fw-bold" onclick="$(this).prev().prev().find('input[type=file]').click()">
+                                    <i class="fa fa-image me-1"></i>Change Image
+                                </button>
+                                <input type="text" class="form-control form-control-sm rounded-pill text-center mb-2" value="Dr. K. M. Bulama">
+                                <input type="text" class="form-control form-control-sm rounded-pill text-center text-muted extra-small" value="NUESA Staff Adviser">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. FAQ ACCORDION MANAGER -->
+                <div class="dash-card p-4 p-md-5 mb-4">
+                    <h5 class="fw-bold text-dark mb-3 border-bottom pb-2"><i class="fa fa-question-circle text-info me-2"></i>Homepage FAQ Accordion Manager</h5>
+
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <div class="p-3 border rounded-3 bg-light">
+                                <div class="fw-bold text-dark small mb-1">FAQ 1: Departmental Dues</div>
+                                <input type="text" class="form-control form-control-sm rounded-pill mb-2" value="How do I pay my annual NUESA Departmental Dues?">
+                                <textarea class="form-control form-control-sm rounded-3" rows="2">Annual NUESA dues are payable at the NUESA Secretariat (Faculty of Engineering Complex) or through the student online portal. Ensure you retain your physical or digital receipt for clearance.</textarea>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="p-3 border rounded-3 bg-light">
+                                <div class="fw-bold text-dark small mb-1">FAQ 2: Lecture Notes & Resources</div>
+                                <input type="text" class="form-control form-control-sm rounded-pill mb-2" value="How can I download PDF lecture notes and past question papers?">
+                                <textarea class="form-control form-control-sm rounded-3" rows="2">Navigate to our Resources Hub. Filter by your level (100L to 500L) or department to download free course notes, tutorial guides, and past examination papers.</textarea>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="p-3 border rounded-3 bg-light">
+                                <div class="fw-bold text-dark small mb-1">FAQ 3: SIWES Clearance</div>
+                                <input type="text" class="form-control form-control-sm rounded-pill mb-2" value="What are the requirements for SIWES industrial logbook clearance?">
+                                <textarea class="form-control form-control-sm rounded-3" rows="2">For 400L students returning from industrial attachment, logbooks must be signed by your industry supervisor, accompanied by your technical report, and submitted to your departmental SIWES coordinator.</textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BOTTOM SAVE BUTTON ACTION BAR -->
+                <div class="dash-card p-4 mb-4 text-end">
+                    <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+                        <div class="text-start">
+                            <div class="fw-bold text-dark"><i class="fa fa-info-circle text-success me-2"></i>Save Configuration</div>
+                            <div class="text-muted extra-small">Clicking Save will update the public home page live immediately.</div>
+                        </div>
+                        <button class="btn btn-success rounded-pill px-5 py-3 fw-bold shadow d-inline-flex align-items-center" onclick="saveHomeChanges()" style="background: linear-gradient(135deg, #008751 0%, #006038 100%); border: none;">
+                            <i class="fa fa-save me-2 fs-5"></i>Save Home Changes
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- DASHBOARD FOOTER -->
+            <footer class="mt-auto py-3 px-4 bg-white border-top text-center text-muted small">
+                Copyright &copy; NUESA UNIMAID Executive Control • Faculty of Engineering, University of Maiduguri.
+            </footer>
+        </main>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function toggleSidebar() {
+            if ($(window).width() >= 992) {
+                $('#appSidebar').toggleClass('collapsed');
+                if ($('#appSidebar').hasClass('collapsed')) {
+                    $('#collapseArrowIcon').removeClass('fa-chevron-left').addClass('fa-chevron-right');
+                    $('#topbarCollapseBtn').attr('title', 'Expand Sidebar');
+                } else {
+                    $('#collapseArrowIcon').removeClass('fa-chevron-right').addClass('fa-chevron-left');
+                    $('#topbarCollapseBtn').attr('title', 'Collapse Sidebar');
+                }
+            } else {
+                $('#appSidebar').toggleClass('show');
+                $('#sidebarBackdrop').toggleClass('show');
+            }
+        }
+
+        function saveHomeChanges() {
+            $('#homeAlertText').text('Home page content saved successfully! Live public website is updated.');
+            $('#homeAlert').removeClass('d-none');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+
+</html>

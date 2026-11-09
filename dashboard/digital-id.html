@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Digital Student ID - NUESA Student Portal</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Digital NUESA Student ID Badge, University of Maiduguri" name="keywords">
+    <meta content="Official printable digital ID card for engineering students." name="description">
+
+    <!-- Favicon -->
+    <link href="../img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts & Material Symbols -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Rubik:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet & Central Dashboard CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/dashboard.css" rel="stylesheet">
+
+    <style>
+        /* Standard CR80 Portrait ID Card Styles (Ratio 330px x 520px) */
+        .nuesa-portrait-card {
+            width: 330px;
+            height: 520px;
+            border-radius: 18px;
+            position: relative;
+            overflow: hidden;
+            background: #ffffff;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+            border: 2px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            font-family: 'Rubik', sans-serif;
+            text-align: left;
+        }
+
+        /* Front Card Header */
+        .id-header-front {
+            background: linear-gradient(135deg, #00351d 0%, #008751 70%, #eb7c13 100%);
+            color: #ffffff;
+            padding: 14px 14px 10px;
+            border-bottom: 3px solid #eb7c13;
+        }
+
+        /* Watermark background */
+        .id-watermark {
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-15deg);
+            width: 220px;
+            opacity: 0.06;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .id-card-body {
+            position: relative;
+            z-index: 2;
+            padding: 14px 16px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .id-avatar-wrapper {
+            position: relative;
+            margin-bottom: 8px;
+        }
+
+        .id-avatar-img {
+            width: 105px;
+            height: 125px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 3px solid #008751;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .id-verified-pill {
+            background: #008751;
+            color: #ffffff;
+            font-size: 9px;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 50px;
+            letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            box-shadow: 0 2px 6px rgba(0, 135, 81, 0.3);
+        }
+
+        .id-field-group {
+            width: 100%;
+            margin-bottom: 6px;
+        }
+
+        .id-label {
+            font-size: 8.5px;
+            font-weight: 700;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1px;
+        }
+
+        .id-value {
+            font-size: 13px;
+            font-weight: 700;
+            color: #0f172a;
+            line-height: 1.2;
+        }
+
+        .id-value-highlight {
+            color: #008751;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 0.5px;
+        }
+
+        /* Card Footer Strip */
+        .id-footer-strip {
+            background: #002b18;
+            color: #ffffff;
+            padding: 8px 14px;
+            border-top: 2px solid #eb7c13;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 2;
+        }
+
+        /* Back Card Styles */
+        .nuesa-portrait-card-back {
+            background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+        }
+
+        .mag-stripe {
+            width: 100%;
+            height: 38px;
+            background: #1e293b;
+            margin-top: 15px;
+        }
+
+        /* PRINT STYLES - Hides everything except standard ID cards */
+        @media print {
+            body {
+                background: #ffffff !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            .sidebar-backdrop,
+            .app-sidebar,
+            .app-topbar,
+            footer,
+            .non-printable,
+            .dash-card-header {
+                display: none !important;
+            }
+
+            .app-wrapper,
+            .app-main,
+            .app-content,
+            .dash-card {
+                padding: 0 !important;
+                margin: 0 !important;
+                background: none !important;
+                border: none !important;
+                box-shadow: none !important;
+            }
+
+            .printable-id-wrapper {
+                display: flex !important;
+                flex-direction: row !important;
+                justify-content: center !important;
+                align-items: center !important;
+                gap: 25px !important;
+                padding: 30px 10px !important;
+                width: 100% !important;
+                margin: 0 auto !important;
+            }
+
+            .nuesa-portrait-card {
+                box-shadow: none !important;
+                border: 1.5px solid #004d2e !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                page-break-inside: avoid !important;
+            }
+
+            @page {
+                size: A4 portrait;
+                margin: 10mm;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Mobile Drawer Backdrop -->
+    <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
+
+    <div class="app-wrapper">
+
+        <!-- 1. LIGHT APP SIDEBAR -->
+        <aside class="app-sidebar" id="appSidebar">
+            <div>
+                <div class="sidebar-header">
+                    <a href="../index.html" class="d-flex align-items-center text-decoration-none">
+                        <img src="../img/logos/NUESA logo.jpeg" alt="NUESA UNIMAID" class="rounded-circle me-2" style="width: 40px; height: 40px; object-fit: cover; border: 2px solid #008751;">
+                        <div class="brand-text">
+                            <div class="fw-bold text-dark leading-none" style="letter-spacing: -0.3px;">NUESA UNIMAID</div>
+                            <span class="badge bg-success-subtle text-success px-2 py-0 rounded-pill extra-small fw-bold" style="font-size: 10px;">STUDENT PORTAL</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="sidebar-menu">
+                    <div class="menu-category">Main Menu</div>
+                    <a href="index.html" class="sidebar-link" title="Overview">
+                        <span class="material-symbols-outlined">grid_view</span>
+                        <span class="sidebar-text">Overview</span>
+                    </a>
+                    <a href="digital-id.html" class="sidebar-link active" title="Digital Student ID">
+                        <span class="material-symbols-outlined">badge</span>
+                        <span class="sidebar-text">Digital Student ID</span>
+                    </a>
+                    <a href="dues.html" class="sidebar-link" title="Dues & Receipts">
+                        <span class="material-symbols-outlined">receipt_long</span>
+                        <span class="sidebar-text">Dues & Receipts</span>
+                    </a>
+
+                    <div class="menu-category">Academics & Governance</div>
+                    <a href="vault.html" class="sidebar-link" title="Course Vault">
+                        <span class="material-symbols-outlined">folder_open</span>
+                        <span class="sidebar-text">Course Vault</span>
+                    </a>
+                    <a href="elections.html" class="sidebar-link" title="NUESA Elections">
+                        <span class="material-symbols-outlined">how_to_vote</span>
+                        <span class="sidebar-text">Elections & Voting</span>
+                    </a>
+
+                    <div class="menu-category">Account</div>
+                    <a href="profile.html" class="sidebar-link" title="Profile Settings">
+                        <span class="material-symbols-outlined">person</span>
+                        <span class="sidebar-text">Profile Settings</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <a href="../index.html" class="sidebar-link mb-2 text-warning" title="Public Website">
+                    <span class="material-symbols-outlined">language</span>
+                    <span class="sidebar-text">Public Website</span>
+                </a>
+                <a href="../login.html" class="sidebar-link text-danger mb-0" title="Logout Portal">
+                    <span class="material-symbols-outlined">logout</span>
+                    <span class="sidebar-text">Logout Portal</span>
+                </a>
+            </div>
+        </aside>
+
+
+        <!-- 2. MAIN WORKSPACE AREA -->
+        <main class="app-main">
+
+            <!-- APP TOPBAR HEADER -->
+            <header class="app-topbar non-printable">
+                <div class="d-flex align-items-center flex-grow-1 me-3">
+                    <button class="btn btn-light me-3 rounded-circle p-2 shadow-sm border d-none d-lg-flex align-items-center justify-content-center" id="topbarCollapseBtn" onclick="toggleSidebar()" title="Collapse Sidebar" style="width: 42px; height: 42px;">
+                        <i class="fa fa-chevron-left text-muted fs-6" id="collapseArrowIcon"></i>
+                    </button>
+
+                    <button class="btn btn-light me-3 d-lg-none rounded-circle p-2 shadow-sm border" onclick="toggleSidebar()" title="Toggle Menu" style="width: 42px; height: 42px;">
+                        <i class="fa fa-bars text-dark fs-5"></i>
+                    </button>
+
+                    <div class="topbar-search d-none d-md-block flex-grow-1">
+                        <span class="material-symbols-outlined search-icon">search</span>
+                        <input type="text" class="form-control" placeholder="Search course vault, past questions, payment receipts, announcements...">
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center gap-3">
+                    <a href="dues.html" class="btn btn-secondary rounded-pill px-3 py-2 fw-bold shadow-sm d-none d-sm-inline-flex align-items-center btn-sm">
+                        <i class="fa fa-credit-card me-2"></i>Pay Dues
+                    </a>
+
+                    <div class="dropdown">
+                        <button class="btn btn-light rounded-circle p-2 position-relative shadow-sm border" data-bs-toggle="dropdown" style="width: 42px; height: 42px;">
+                            <i class="fa fa-bell text-muted"></i>
+                            <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"></span>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end shadow-lg border-0 rounded-4 p-3 mt-2" style="width: 310px;">
+                            <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                                <h6 class="mb-0 fw-bold text-dark">Portal Notifications</h6>
+                                <span class="badge bg-primary-subtle text-primary rounded-pill extra-small">2 Unread</span>
+                            </div>
+                            <div class="mb-2 p-2 bg-light rounded-3">
+                                <div class="fw-bold text-dark extra-small">500L SIWES Defense</div>
+                                <div class="text-muted extra-small">Logbooks submission deadline updated.</div>
+                            </div>
+                            <div class="p-2 bg-light rounded-3">
+                                <div class="fw-bold text-dark extra-small">Dues Payment Received</div>
+                                <div class="text-muted extra-small">Receipt NUESA-TXN-984211 ready.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle p-1 rounded-pill bg-light border shadow-sm" data-bs-toggle="dropdown">
+                            <img src="../img/team-1.jpg" alt="Profile" class="rounded-circle me-2" style="width: 36px; height: 36px; object-fit: cover; border: 2px solid #008751;" id="topbarAvatarImg">
+                            <div class="text-start d-none d-md-block me-2">
+                                <div class="fw-bold text-dark leading-none small" id="topbarUserName">Ismail Yusuf</div>
+                                <div class="text-muted extra-small" style="font-size: 10px;">500L CPE</div>
+                            </div>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end shadow-lg border-0 rounded-4 p-2 mt-2" style="min-width: 220px;">
+                            <div class="p-3 bg-light rounded-3 mb-2">
+                                <div class="fw-bold text-dark" id="dropdownUserName">Ismail Yusuf</div>
+                                <div class="extra-small text-muted" id="dropdownUserEmail">ismail.yusuf@eng.unimaid.edu.ng</div>
+                                <span class="badge bg-success-subtle text-success rounded-pill px-2 py-1 mt-1 extra-small">NUESA ID Verified</span>
+                            </div>
+                            <a href="index.html" class="dropdown-item rounded-2 py-2"><i class="fa fa-tachometer-alt text-primary me-2"></i>Dashboard</a>
+                            <a href="digital-id.html" class="dropdown-item rounded-2 py-2"><i class="fa fa-id-card text-primary me-2"></i>My Digital ID</a>
+                            <a href="dues.html" class="dropdown-item rounded-2 py-2"><i class="fa fa-receipt text-primary me-2"></i>Dues & Receipts</a>
+                            <a href="profile.html" class="dropdown-item rounded-2 py-2"><i class="fa fa-user-cog text-primary me-2"></i>Settings</a>
+                            <hr class="dropdown-divider">
+                            <a href="../index.html" class="dropdown-item rounded-2 py-2 text-warning"><i class="fa fa-globe me-2"></i>Main Website</a>
+                            <a href="../login.html" class="dropdown-item rounded-2 py-2 text-danger"><i class="fa fa-sign-out-alt me-2"></i>Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+
+            <!-- WORKSPACE CONTENT -->
+            <div class="app-content">
+
+                <div class="dash-card p-4 p-lg-5">
+                    <div class="d-flex align-items-center justify-content-between mb-4 border-bottom pb-3 dash-card-header">
+                        <div>
+                            <h4 class="text-dark fw-bold mb-1">Standard Digital Student ID Card (CR80 Portrait)</h4>
+                            <p class="text-muted small mb-0">Official identity badge for Faculty of Engineering, University of Maiduguri.</p>
+                        </div>
+                        <button class="btn btn-secondary rounded-pill px-4 fw-bold shadow-sm" onclick="window.print()">
+                            <i class="fa fa-print me-2"></i>Print ID Card
+                        </button>
+                    </div>
+
+                    <!-- PRINTABLE ID WRAPPER -->
+                    <div class="printable-id-wrapper d-flex flex-wrap justify-content-center gap-4 my-3">
+
+                        <!-- FRONT SIDE (PORTRAIT CR80) -->
+                        <div class="nuesa-portrait-card">
+                            <img src="../img/logos/NUESA_logo.png" class="id-watermark" alt="Watermark Seal">
+
+                            <!-- Header -->
+                            <div class="id-header-front">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <img src="../img/logos/NUESA_logo.png" alt="NUESA Logo" class="rounded-circle bg-white p-1" style="width: 42px; height: 42px; object-fit: contain;">
+                                    <div class="text-center px-1">
+                                        <div class="fw-bold extra-small text-uppercase tracking-wider" style="font-size: 8px; color: #ffffff;">NIGERIAN UNIVERSITIES ENGINEERING STUDENTS' ASSOCIATION</div>
+                                        <div class="fw-bold extra-small text-uppercase tracking-wider" style="font-size: 10.5px; color: #ffffff;">NUESA UNIMAID CHAPTER</div>
+                                        <div class="extra-small text-warning fw-bold" style="font-size: 8px;">FACULTY OF ENGINEERING • UNIMAID</div>
+                                    </div>
+                                    <img src="../img/logos/unimaid logo.jpeg" alt="UNIMAID Logo" class="rounded-circle bg-white p-1" style="width: 40px; height: 40px; object-fit: cover;">
+                                </div>
+                            </div>
+
+                            <!-- Body -->
+                            <div class="id-card-body pt-3">
+                                <div class="id-avatar-wrapper text-center" style="margin-top: 28px;">
+                                    <img src="../img/team-1.jpg" alt="Student Photo" class="id-avatar-img" id="cardPhotoImg" style="width: 125px; height: 140px; object-fit: cover; border-radius: 14px; border: 3px solid #008751; box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);">
+                                </div>
+
+                                <div class="mb-2 text-center">
+                                    <span class="id-verified-pill">
+                                        <i class="fa fa-check-circle me-1"></i> VERIFIED MEMBER
+                                    </span>
+                                </div>
+
+                                <div class="id-field-group text-center mb-1">
+                                    <div class="id-label">STUDENT FULL NAME</div>
+                                    <div class="id-value text-uppercase" id="cardFullName">Ismail Yusuf</div>
+                                </div>
+
+                                <div class="w-100 row g-1 text-start my-1">
+                                    <div class="col-6">
+                                        <div class="id-label">MATRIC NO</div>
+                                        <div class="id-value id-value-highlight" id="cardMatricNo" style="font-size: 11.5px;">20/05/01/000</div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="id-label">NUESA ID NO.</div>
+                                        <div class="id-value text-success fw-bold" style="font-size: 11px;" id="cardNuesaId">NUESA/2025/CPE/0042</div>
+                                    </div>
+                                </div>
+
+                                <div class="w-100 row g-1 text-start mt-2">
+                                    <div class="col-6">
+                                        <div class="id-label">DEPT / LEVEL</div>
+                                        <div class="id-value" style="font-size: 11px;" id="cardDeptLevel">CPE • 500L</div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="id-label">VALID SESSION</div>
+                                        <div class="id-value text-success" style="font-size: 11px;">2024/2025</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Footer Strip Background Bar -->
+                            <div class="id-footer-strip py-2" style="min-height: 24px;"></div>
+                        </div>
+
+                        <!-- BACK SIDE (PORTRAIT CR80) -->
+                        <div class="nuesa-portrait-card nuesa-portrait-card-back">
+                            <!-- Magnetic Stripe Visual -->
+                            <div class="mag-stripe"></div>
+
+                            <div class="p-3 flex-grow-1 d-flex flex-column justify-content-between text-center">
+                                <div>
+                                    <div class="border-bottom pb-3 mb-2 text-center" style="margin-top: 32px;">
+                                        <div class="fw-bold text-dark mb-2 text-center" style="font-size: 12.5px; color: #004d2e !important; letter-spacing: 0.3px;">TERMS OF USE & PROPERTY NOTICE</div>
+                                        <p class="text-dark fw-normal mb-3 text-center" style="font-size: 11.5px; line-height: 1.5; color: #1e293b !important;">
+                                            This card is the official property of NUESA UNIMAID Chapter, Faculty of Engineering. It must be presented upon request for access to Faculty facilities, exams, and voting. If found, please return to the NUESA Secretariat, UNIMAID.
+                                        </p>
+
+                                        <!-- QR CODE DIRECTLY UNDER TERMS TEXT -->
+                                        <div class="text-center pt-2 border-top">
+                                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=NUESA-UNIMAID-VERIFIED-STUDENT-200501000" alt="QR Code Verification" class="bg-white p-1 rounded border shadow-sm" style="width: 70px; height: 70px;">
+                                            <div class="extra-small text-muted mt-1 fw-semibold" style="font-size: 8.5px;">SCAN TO VERIFY FACULTY MEMBERSHIP</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="row align-items-end my-2">
+                                        <div class="col-6 text-center">
+                                            <div class="fst-italic text-dark fw-bold" style="font-family: 'Brush Script MT', cursive; font-size: 17px; color: #004d2e;">Engr. Yusuf M.</div>
+                                            <div class="border-top pt-1 text-muted extra-small" style="font-size: 8px; font-weight: 600;">NUESA PRESIDENT SIGN</div>
+                                        </div>
+                                        <div class="col-6 text-center">
+                                            <img src="../img/logos/NUESA_logo.png" alt="Seal" style="width: 36px; height: 36px; opacity: 0.85;">
+                                            <div class="border-top pt-1 text-muted extra-small" style="font-size: 8px; font-weight: 600;">OFFICIAL STAMP</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- DASHBOARD FOOTER -->
+            <footer class="mt-auto py-3 px-4 bg-white border-top text-center text-muted small non-printable">
+                Copyright &copy; NUESA UNIMAID Chapter • Faculty of Engineering, University of Maiduguri.
+            </footer>
+        </main>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function toggleSidebar() {
+            if ($(window).width() >= 992) {
+                $('#appSidebar').toggleClass('collapsed');
+                if ($('#appSidebar').hasClass('collapsed')) {
+                    $('#collapseArrowIcon').removeClass('fa-chevron-left').addClass('fa-chevron-right');
+                    $('#topbarCollapseBtn').attr('title', 'Expand Sidebar');
+                } else {
+                    $('#collapseArrowIcon').removeClass('fa-chevron-right').addClass('fa-chevron-left');
+                    $('#topbarCollapseBtn').attr('title', 'Collapse Sidebar');
+                }
+            } else {
+                $('#appSidebar').toggleClass('show');
+                $('#sidebarBackdrop').toggleClass('show');
+            }
+        }
+
+        $(document).ready(function() {
+            // Load persistent student profile data into the ID card
+            const profile = JSON.parse(localStorage.getItem('nuesa_student_profile') || '{}');
+
+            if (profile.fullName) {
+                $('#cardFullName, #topbarUserName, #dropdownUserName').text(profile.fullName);
+            }
+            if (profile.matricNo) {
+                $('#cardMatricNo').text(profile.matricNo);
+            }
+            if (profile.email) {
+                $('#dropdownUserEmail').text(profile.email);
+            }
+            if (profile.department) {
+                const deptShort = profile.department.split(' ')[0];
+                $('#cardDeptLevel').text((profile.departmentAbbr || deptShort) + ' • ' + (profile.level || '500L'));
+            }
+            if (profile.level) {
+                $('#cardAcademicLevel').text(profile.level + (profile.level === 'Graduate' ? '' : ' Level'));
+            }
+            if (profile.stateOrigin) {
+                $('#cardStateOrigin').text(profile.stateOrigin);
+            }
+            if (profile.nextOfKin) {
+                $('#cardNextOfKin').text(profile.nextOfKin);
+            }
+            if (profile.avatar) {
+                $('#cardPhotoImg, #topbarAvatarImg').attr('src', profile.avatar);
+            }
+        });
+    </script>
+</body>
+
+</html>
